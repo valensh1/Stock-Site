@@ -1,107 +1,192 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 
 body {
-  font-size: 16px;
-  display: relative;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
 }
 
-.NavBar {
+#app {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+// Overall watchlist container which INCLUDES the search bar and watchlist
+.watchlist-overallContainer {
+  position: relative;
+  width: 15%;
+  left: 40%;
+  top: 10%;
+  // border: 10px solid green;
+}
+
+// Watchlist container which EXCLUDES the search bar. It only includes the actual watchlist section with the headers for the watchlist
+.watchlist-xSearchbar-container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  position: absolute;
+  left: -17%;
   width: 100%;
-  background-color: #f0f0f0;
+  top: 180%;
+  // border: 10px solid purple;
 }
 
-#symbol-input {
-  position: absolute;
-  width: 25vw;
-  left: 35%;
-  input {
-  text-transform: uppercase;
-  }
-}
-
+// Watchlist headers
 .watchlist-headers {
-  width: 50%;
-  display: inline;
-  #symbol-header, #last-price-header {
-    display: inline-block;
-    position: relative;
-    left: 35%
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  #last-price-header{
+   position: absolute;
+   left: 50%;
+  }
+  #symbol-header {
+    margin-left: 2%;
   }
 }
 
-#last-price-header {
-  margin-left: 6%
-}
-
-.watchlist-container {
+// Actual watchlist with ticker symbols container (DOES NOT INCLUDE HEADERS). Wraps around all symbols in the listing.
+.stock-list-container {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  top: 2vh;
-  width: 100vw;
-  height: 100vh;
-  border: 3px solid red;
-}
-
-.watchlist-header-container {
-  position: relative;
-  top: 12vh;
-  width: 100vw;
-  height: 100vh;
-}
-
-.stock-list-container{
-  position: absolute;
-  left: 32%;
-  width: 25%;
-  height: fit-content;
+  color:white;
   background-color: teal;
-  color: white;
   border: 5px solid red;
-}
-
-.stock-list-container li { 
-  display: inline-block;
   height: fit-content;
-  left: -20%;
+  .stock-symbol-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    border: 2px solid white;
+    .symbol {
+      margin-left: 2%;
+    }
+  }
+  .last-price {
+    position: absolute;
+    right: 25%;
+  }
 }
 
-.stock-symbol-container {
-  border: 2px solid white;
-  margin-bottom: 0%;
+
+
+
+
+
+
+
+
+
+
+
+// body {
+//   font-size: 16px;
+//   display: relative;
+// }
+
+// .NavBar {
+//   display: flex;
+//   justify-content: space-around;
+//   width: 100%;
+//   background-color: #f0f0f0;
+// }
+
+// #symbol-input {
+//   position: absolute;
+//   width: 25vw;
+//   left: 35%;
+//   input {
+//   text-transform: uppercase;
+//   }
+// }
+
+// .watchlist-headers {
+//   width: 50%;
+//   display: inline;
+//   #symbol-header, #last-price-header {
+//     display: inline-block;
+//     position: relative;
+//     left: 35%
+//   }
+// }
+
+// #last-price-header {
+//   margin-left: 6%
+// }
+
+// .watchlist-container {
+//   position: relative;
+//   top: 2vh;
+//   width: 100vw;
+//   height: 100vh;
+//   border: 3px solid red;
+// }
+
+// .watchlist-header-container {
+//   position: relative;
+//   top: 12vh;
+//   width: 100vw;
+//   height: 100vh;
+// }
+
+// .stock-list-container{
+//   position: absolute;
+//   left: 32%;
+//   width: 25%;
+//   height: fit-content;
+//   background-color: teal;
+//   color: white;
+//   border: 5px solid red;
+// }
+
+// .stock-list-container li { 
+//   display: inline-block;
+//   height: fit-content;
+//   left: -20%;
+// }
+
+// .stock-symbol-container {
+//   border: 2px solid white;
+//   margin-bottom: 0%;
   
-}
+// }
 
-.symbol {
-  position: relative;
-  left: 0vw;
-}
+// .symbol {
+//   position: relative;
+  
+// }
 
-.last-price {
-  position: relative;
-  margin-left: 20%;
-}
+// .last-price {
+//   position: relative;
+//   margin-left: 70%;
+// }
 
-#trash-can {
-  position: absolute;
-  left: 85%;
+// #trash-can {
+//   position: absolute;
+//   left: 85%;
  
-}
+// }
 
 
 
-.HomePage {
+// .HomePage {
 
-}
+// }
 
-.AboutPage {
+// .AboutPage {
 
-}
+// }
 
-.ContactPage{
+// .ContactPage{
 
-}
+// }
 
-.AppPage {
+// .AppPage {
 
-}
+// }
