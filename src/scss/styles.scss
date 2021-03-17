@@ -6,6 +6,13 @@ body {
   width: 100vw;
 }
 
+.NavBar {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
 #app {
   position: relative;
   height: 100vh;
@@ -27,7 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   position: absolute;
-  left: -17%;
+  left: -15%;
   width: 100%;
   top: 180%;
   // border: 10px solid purple;
@@ -64,13 +71,24 @@ body {
     align-items: center;
     text-transform: uppercase;
     border: 2px solid white;
+    a {
+      width: 90%;
+      color: white;
+    h4 {
+     display: inline;
+    }
+    #lastPrice {
+      display: inline;
+      position: absolute;
+      margin-left: -25%;
+    }
+    }
     .symbol {
       margin-left: 2%;
     }
-  }
-  .last-price {
-    position: absolute;
-    right: 25%;
+    .last-price {
+      left: 75%;
+    }
   }
 }
 
@@ -85,108 +103,7 @@ body {
 
 
 
-// body {
-//   font-size: 16px;
-//   display: relative;
-// }
-
-// .NavBar {
-//   display: flex;
-//   justify-content: space-around;
-//   width: 100%;
-//   background-color: #f0f0f0;
-// }
-
-// #symbol-input {
-//   position: absolute;
-//   width: 25vw;
-//   left: 35%;
-//   input {
-//   text-transform: uppercase;
-//   }
-// }
-
-// .watchlist-headers {
-//   width: 50%;
-//   display: inline;
-//   #symbol-header, #last-price-header {
-//     display: inline-block;
-//     position: relative;
-//     left: 35%
-//   }
-// }
-
-// #last-price-header {
-//   margin-left: 6%
-// }
-
-// .watchlist-container {
-//   position: relative;
-//   top: 2vh;
-//   width: 100vw;
-//   height: 100vh;
-//   border: 3px solid red;
-// }
-
-// .watchlist-header-container {
-//   position: relative;
-//   top: 12vh;
-//   width: 100vw;
-//   height: 100vh;
-// }
-
-// .stock-list-container{
-//   position: absolute;
-//   left: 32%;
-//   width: 25%;
-//   height: fit-content;
-//   background-color: teal;
-//   color: white;
-//   border: 5px solid red;
-// }
-
-// .stock-list-container li { 
-//   display: inline-block;
-//   height: fit-content;
-//   left: -20%;
-// }
-
-// .stock-symbol-container {
-//   border: 2px solid white;
-//   margin-bottom: 0%;
-  
-// }
-
-// .symbol {
-//   position: relative;
-  
-// }
-
-// .last-price {
-//   position: relative;
-//   margin-left: 70%;
-// }
-
-// #trash-can {
-//   position: absolute;
-//   left: 85%;
- 
-// }
 
 
 
-// .HomePage {
 
-// }
-
-// .AboutPage {
-
-// }
-
-// .ContactPage{
-
-// }
-
-// .AppPage {
-
-// }

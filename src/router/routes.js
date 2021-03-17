@@ -3,6 +3,7 @@ import App from '../pages/App';
 import About from '../pages/About';
 import Home from '../pages/Home';
 import Contact from '../pages/Contact';
+import StockNews from '../pages/StockNews';
 
 const routes = [
 	{
@@ -21,7 +22,12 @@ const routes = [
 		path: '/about'
 	},
 	{
-		Component: App,
+		Component: StockNews, // Show page MUST BE before index page and this shows one individual stock that user clicked on from index page
+		key: 'StockNews',
+		path: '/:id'
+	},
+	{
+		Component: App, // Index page which shows all stocks on your watchlist
 		key: 'App',
 		path: '/'
 	}

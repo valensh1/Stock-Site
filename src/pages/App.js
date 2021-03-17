@@ -121,8 +121,12 @@ export default function App(props) {
 								className="stock-symbol-container"
 								key={stock._id}
 							>
-								<h4 className="symbol">{stock.symbol}</h4>
-								<h4 className="last-price">${stock.lastPrice}</h4>
+								<Link to={`/${stock._id}`} symbol={stock.symbol}>
+									<h4 className="symbol">{stock.symbol}</h4>
+									<h4 className="last-price" id="lastPrice">
+										${stock.lastPrice}
+									</h4>
+								</Link>
 								<DeleteSymbol
 									stockID={stock._id}
 									changeState={changeStateAfterDelete}
