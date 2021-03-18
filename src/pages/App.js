@@ -3,6 +3,7 @@ import AddSymbol from '../components/AddSymbol';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { DeleteSymbol } from '../components/DeleteSymbol';
+import PriceChart from '../components/PriceChart';
 
 const AlphaVantageAPIKey = process.env.ALPHA_VANTAGE_API_KEY;
 
@@ -121,6 +122,7 @@ export default function App(props) {
 								className="stock-symbol-container"
 								key={stock._id}
 							>
+								{/* Passing of props such as stock.symbol to StockNews page */}
 								<Link to={`/${stock._id}`} symbol={stock.symbol}>
 									<h4 className="symbol">{stock.symbol}</h4>
 									<h4 className="last-price" id="lastPrice">

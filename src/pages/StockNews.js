@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import PriceChart from '../components/PriceChart';
 import App from './App';
 
 const PolygonAPIKey = 'lb5t4CfGCkFI2pFpkTrfsZlaswHw8xIC';
+const AlphaVantageAPIKey = process.env.ALPHA_VANTAGE_API_KEY;
 
 export default function StockNews(props) {
 	console.log(props);
@@ -12,12 +14,16 @@ export default function StockNews(props) {
 	});
 	const [APINews, setAPINews] = useState([]);
 	const tickerUpdate = useRef(null);
+	const [closing, setClosing] = useState([]);
+	const closingPrices = [];
+
 	useEffect(() => {
 		(async () => {
 			try {
 				const response = await fetch(`/api/stocks/${props.match.params.id}`);
 				const data = await response.json();
 				await setTicker(data);
+				//console.log(data);
 			} catch (err) {
 				console.error(err);
 			}
@@ -36,6 +42,63 @@ export default function StockNews(props) {
 				console.log(data);
 				console.log(data[0].title);
 				await setAPINews(data);
+			} catch (error) {
+				console.error(error);
+			}
+		})();
+	}, [ticker]);
+
+	useEffect(() => {
+		(async () => {
+			try {
+				console.log(ticker.symbol);
+				const response = await fetch(
+					`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${ticker.symbol.toUpperCase()}&outputsize=full&apikey=${AlphaVantageAPIKey}`
+				);
+				console.log(
+					`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${ticker.symbol.toUpperCase()}&apikey=${AlphaVantageAPIKey}`
+				);
+				//console.log(response);
+				const data = await response.json();
+				console.log(data);
+				closingPrices.push(
+					data['Time Series (Daily)']['2020-04-30']['5. adjusted close']
+				);
+				closingPrices.push(
+					data['Time Series (Daily)']['2020-05-29']['5. adjusted close']
+				);
+				closingPrices.push(
+					data['Time Series (Daily)']['2020-06-30']['5. adjusted close']
+				);
+				closingPrices.push(
+					data['Time Series (Daily)']['2020-07-31']['5. adjusted close']
+				);
+				closingPrices.push(
+					data['Time Series (Daily)']['2020-08-31']['5. adjusted close']
+				);
+				closingPrices.push(
+					data['Time Series (Daily)']['2020-09-30']['5. adjusted close']
+				);
+				closingPrices.push(
+					data['Time Series (Daily)']['2020-10-30']['5. adjusted close']
+				);
+				closingPrices.push(
+					data['Time Series (Daily)']['2020-11-30']['5. adjusted close']
+				);
+				closingPrices.push(
+					data['Time Series (Daily)']['2020-12-31']['5. adjusted close']
+				);
+				closingPrices.push(
+					data['Time Series (Daily)']['2021-01-29']['5. adjusted close']
+				);
+				closingPrices.push(
+					data['Time Series (Daily)']['2021-02-26']['5. adjusted close']
+				);
+				closingPrices.push(
+					data['Time Series (Daily)']['2021-03-17']['5. adjusted close']
+				);
+				console.log(closingPrices);
+				setClosing([...closing, closingPrices]);
 			} catch (error) {
 				console.error(error);
 			}
@@ -79,9 +142,10 @@ export default function StockNews(props) {
 				<button>BACK</button>
 			</a>
 			<h1 className="stock-news-headers">
-				<span>{ticker.symbol}</span> News
+				<span>{ticker.symbol.toUpperCase()}</span> News
 			</h1>
 			<h4>${ticker.lastPrice}</h4>
+			<PriceChart closing={closing} />
 			<Link to={`/${ticker._id}/edit`}>
 				<button onClick={handleUpdate}>Update Post</button>
 			</Link>
