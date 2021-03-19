@@ -101,41 +101,55 @@ export default function App(props) {
 	};
 
 	return (
-		<div className="watchlist-overallContainer">
-			<div id="stock-search-bar">
-				<AddSymbol
-					tickerSymbol={typedSymbol}
-					handleChange={handleChange}
-					handleSubmit={handleSubmit}
-				/>
-			</div>
-			<div className="watchlist-xSearchbar-container">
-				<div className="watchlist-headers">
-					<h6 id="symbol-header">Symbol</h6>
-					<h6 id="last-price-header">Last Price</h6>
+		<div
+			className="bg"
+			style={{
+				backgroundImage: `url("https://i.imgur.com/jSXvuzP.jpg")`
+			}}
+		>
+			<div className="watchlist-overallContainer">
+				{/* <img className="bg" src="https://i.imgur.com/jSXvuzP.jpg" title="source: imgur.com" /> */}
+				{/* <img className="bg" title="source: imgur.com" /> */}
+				{/* <img
+				className="bg"
+				src="https://i.imgur.com/jSXvuzP.jpg"
+				title="source: imgur.com"
+			/> */}
+				<div id="stock-search-bar">
+					<AddSymbol
+						tickerSymbol={typedSymbol}
+						handleChange={handleChange}
+						handleSubmit={handleSubmit}
+					/>
 				</div>
-				<div className="stock-list-container">
-					{DBWatchlist.map((stock, index) => {
-						return (
-							<div
-								className={stock.symbol}
-								className="stock-symbol-container"
-								key={stock._id}
-							>
-								{/* Passing of props such as stock.symbol to StockNews page */}
-								<Link to={`/${stock._id}`} symbol={stock.symbol}>
-									<h4 className="symbol">{stock.symbol}</h4>
-									<h4 className="last-price" id="lastPrice">
-										${stock.lastPrice}
-									</h4>
-								</Link>
-								<DeleteSymbol
-									stockID={stock._id}
-									changeState={changeStateAfterDelete}
-								/>
-							</div>
-						);
-					})}
+				<div className="watchlist-xSearchbar-container">
+					<div className="watchlist-headers">
+						<h6 id="symbol-header">Symbol</h6>
+						<h6 id="last-price-header">Last Price</h6>
+					</div>
+					<div className="stock-list-container">
+						{DBWatchlist.map((stock, index) => {
+							return (
+								<div
+									className={stock.symbol}
+									className="stock-symbol-container"
+									key={stock._id}
+								>
+									{/* Passing of props such as stock.symbol to StockNews page */}
+									<Link to={`/${stock._id}`} symbol={stock.symbol}>
+										<h4 className="symbol">{stock.symbol}</h4>
+										<h4 className="last-price" id="lastPrice">
+											${stock.lastPrice}
+										</h4>
+									</Link>
+									<DeleteSymbol
+										stockID={stock._id}
+										changeState={changeStateAfterDelete}
+									/>
+								</div>
+							);
+						})}
+					</div>
 				</div>
 			</div>
 		</div>

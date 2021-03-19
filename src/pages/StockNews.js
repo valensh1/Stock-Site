@@ -162,7 +162,11 @@ export default function StockNews(props) {
 			<button id="ticker-update-button" onClick={handleUpdateSubmit}>
 				Send Update
 			</button>
-
+			<br />
+			<br />
+			<br />
+			<br />
+			<h1 className="text-success">Stock News</h1>
 			{APINews.map(article => {
 				return (
 					<div className="stock-news-container">
