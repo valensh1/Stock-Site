@@ -102,7 +102,7 @@ body {
 body, html {
   height: 100%;
   width: 100%;
-  overflow: hidden
+  overflow:visible
 }
 
 
@@ -116,9 +116,9 @@ body, html {
 
 
 
-#bull-drawing {
-  background-color: red;
-}
+// #bull-drawing {
+//   background-color: red;
+// }
 
 /* ANIMATION OF TITLE OF WEBSITE */
 #title { 
@@ -136,8 +136,35 @@ body, html {
   100% {transform: rotatex(360deg)}
   }
 
-
-
+.about-container {
+  .card {
+    margin-left: 1%;
+    margin-top: 2%;
+  }
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+ .card {
+ left: 2%;
+ .card-body {
+   background-color: black;
+   color: white;
+   width: 100%;
+  .card-title{
+    font-size: 25px;
+    text-align: center;
+    text-decoration: underline;
+  }
+  .card-text{
+    font-size: 15px;
+  }
+    }
+ .card-img-top{
+   background-color: gray;
+   height: 40vh;
+    }
+  }
+}
 
 
 

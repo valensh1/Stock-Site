@@ -102,10 +102,7 @@ export default function App(props) {
 
 	return (
 		<div className="bg">
-			{/* <img
-				id="bull-drawing"
-				src="https://t3.ftcdn.net/jpg/00/25/09/58/240_F_25095851_4ziEV2Hh5G5mrawgzIrXzVDyV5isVddP.jpg"
-			></img> */}
+			<img id="bull-drawing" src="https://i.imgur.com/MBzbnpg.png"></img>
 			<div className="watchlist-overallContainer">
 				<div id="stock-search-bar">
 					<AddSymbol
