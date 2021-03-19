@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
+
 
 body {
   position: relative;
@@ -48,9 +50,11 @@ body {
   #last-price-header{
    position: absolute;
    left: 50%;
+   color: white;
   }
   #symbol-header {
     margin-left: 2%;
+    color: white;
   }
 }
 
@@ -81,20 +85,24 @@ body {
       display: inline;
       position: absolute;
       margin-left: -25%;
+      
     }
     }
     .symbol {
       margin-left: 2%;
+     
     }
     .last-price {
       left: 75%;
+      
     }
   }
 }
 
 body, html {
   height: 100%;
-  width: 100%
+  width: 100%;
+  overflow: hidden
 }
 
 
@@ -108,9 +116,25 @@ body, html {
 
 
 
+#bull-drawing {
+  background-color: red;
+}
 
+/* ANIMATION OF TITLE OF WEBSITE */
+#title { 
+  font-family: 'Oi', cursive;
+  font-size: 70px;
+  color: rgb(0, 153, 153);
+  animation-name: titleAnimation;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
 
-
+@keyframes titleAnimation {
+  // 0% {transform: scale(.5)}
+  50% {transform: rotatex(180deg)}
+  100% {transform: rotatex(360deg)}
+  }
 
 
 

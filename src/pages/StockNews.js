@@ -138,9 +138,12 @@ export default function StockNews(props) {
 
 	return (
 		<div>
-			<a href="/">
+			{/* <a href="/">
 				<button>BACK</button>
-			</a>
+			</a> */}
+			<Link to={`/`}>
+				<button>Back</button>
+			</Link>
 			<h1 className="stock-news-headers">
 				<span>{ticker.symbol.toUpperCase()}</span> News
 			</h1>
