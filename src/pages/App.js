@@ -101,20 +101,8 @@ export default function App(props) {
 	};
 
 	return (
-		<div
-			className="bg"
-			style={{
-				backgroundImage: `url("https://i.imgur.com/jSXvuzP.jpg")`
-			}}
-		>
+		<div className="bg">
 			<div className="watchlist-overallContainer">
-				{/* <img className="bg" src="https://i.imgur.com/jSXvuzP.jpg" title="source: imgur.com" /> */}
-				{/* <img className="bg" title="source: imgur.com" /> */}
-				{/* <img
-				className="bg"
-				src="https://i.imgur.com/jSXvuzP.jpg"
-				title="source: imgur.com"
-			/> */}
 				<div id="stock-search-bar">
 					<AddSymbol
 						tickerSymbol={typedSymbol}

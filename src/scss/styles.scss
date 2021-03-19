@@ -97,10 +97,13 @@ body, html {
   width: 100%
 }
 
-.bg {
-height: 100%;
-width: 100%;
-background-size: cover;
+
+.bg { // Must make sure the image is wrapped in the overall container in React or in HTML for it to work and might need to make the box that the div is in 100% height and 100% width
+  background-image: url("https://i.imgur.com/jSXvuzP.jpg"); /* The image used */
+  height: 100%; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 
