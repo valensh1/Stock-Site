@@ -78,13 +78,15 @@ export default function About(props) {
 			<div className="card need-name-image" style={{ width: '25%' }}>
 				<img
 					className="card-img-top"
-					src="https://i.imgur.com/MBzbnpg.png"
+					// src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8b25saW5lJTIwY291cnNlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4JNGMfSRQ5dw7Y28k9vfJqDBCxKZslO8d1A&usqp=CAU"
 					alt="Card image cap"
 				/>
 				<div className="card-body">
-					<h5 className="card-title">Card title</h5>
+					<h5 className="card-title">Online Trading Tutorials</h5>
 					<p className="card-text">
-						Welcome to ALL THINGS WALL STREET! We want to make this
+						Various stock trading tutorials to help you get the most out of your
+						trading.
 					</p>
 					{/* <a href="#" className="btn btn-primary">
 						Go somewhere
