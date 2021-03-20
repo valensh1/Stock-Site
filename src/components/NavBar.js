@@ -3,13 +3,18 @@ import { Link } from 'react-router-dom';
 
 const NavBar = props => {
 	return (
-		<nav className="NavBar">
-			{props.routes.map(({ key, path }) => (
-				<Link key={key} to={path}>
-					{key}
+		<div>
+			<nav className="NavBar">
+				<Link to={`/`}>
+					<i class="large home icon"></i>
 				</Link>
-			))}
-		</nav>
+				{props.routes.map(({ key, path }) => (
+					<Link key={key} to={path}>
+						{key}
+					</Link>
+				))}
+			</nav>
+		</div>
 	);
 };
 
