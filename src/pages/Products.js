@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 export default function About(props) {
 	return (
@@ -25,21 +26,23 @@ export default function About(props) {
 			</div>
 
 			<div className="card" style={{ width: '25%' }}>
-				<img
-					className="card-img-top"
-					src="https://i.imgur.com/N8Pws66.png"
-					alt="Card image cap"
-				/>
-				<div className="card-body">
-					<h5 className="card-title">Custom Watchlists</h5>
-					<p className="card-text">
-						Create your own custom watchlists to keep an eye on your favorite
-						stocks for good entry points
-					</p>
-					{/* <a href="#" className="btn btn-primary">
-						Go somewhere
-					</a> */}
-				</div>
+				<Link to={`/products`}>
+					<img
+						className="card-img-top"
+						src="https://i.imgur.com/N8Pws66.png"
+						alt="Card image cap"
+					/>
+					<div className="card-body">
+						<h5 className="card-title">Custom Watchlists</h5>
+						<p className="card-text">
+							Create your own custom watchlists to keep an eye on your favorite
+							stocks for good entry points
+						</p>
+						<Link to={`/products`}>
+							<button className="btn btn-primary">CLICK</button>
+						</Link>
+					</div>
+				</Link>
 			</div>
 
 			<div className="card" style={{ width: '25%' }}>

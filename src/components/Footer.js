@@ -49,10 +49,18 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className="social-media-icons">
-				<i className="huge facebook icon"></i>
-				<i className="huge instagram icon"></i>
-				<i className="huge twitter icon"></i>
-				<i className="huge snapchat icon"></i>
+				<a href="https://www.facebook.com">
+					<i className="huge facebook icon"></i>
+				</a>
+				<a href="https://www.instagram.com">
+					<i className="huge instagram icon"></i>
+				</a>
+				<a href="https://www.twitter.com">
+					<i className="huge twitter icon"></i>
+				</a>
+				<a href="https://www.snapchat.com">
+					<i className="huge snapchat icon"></i>
+				</a>
 			</div>
 		</div>
 	);
