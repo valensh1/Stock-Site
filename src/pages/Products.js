@@ -26,7 +26,7 @@ export default function About(props) {
 			</div>
 
 			<div className="card" style={{ width: '25%' }}>
-				<Link to={`/products`}>
+				<Link to={`/watchlist`}>
 					<img
 						className="card-img-top"
 						src="https://i.imgur.com/N8Pws66.png"
@@ -38,9 +38,9 @@ export default function About(props) {
 							Create your own custom watchlists to keep an eye on your favorite
 							stocks for good entry points
 						</p>
-						<Link to={`/products`}>
+						{/* <Link to={`/products`}>
 							<button className="btn btn-primary">CLICK</button>
-						</Link>
+						</Link> */}
 					</div>
 				</Link>
 			</div>

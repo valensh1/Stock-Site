@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import PriceChart from '../components/PriceChart';
-import App from './App';
 
 const PolygonAPIKey = 'lb5t4CfGCkFI2pFpkTrfsZlaswHw8xIC';
 const AlphaVantageAPIKey = process.env.ALPHA_VANTAGE_API_KEY;
@@ -28,7 +27,7 @@ export default function StockNews(props) {
 				console.error(err);
 			}
 		})();
-	}, []);
+	}, []); ///// MIGHT NEED TO DELETE THIS
 
 	useEffect(() => {
 		(async () => {

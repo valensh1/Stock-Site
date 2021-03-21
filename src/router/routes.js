@@ -24,14 +24,14 @@ const routes = [
 		path: '/products'
 	},
 	{
-		Component: StockNews, // SHOW PAGE - MUST BE before INDEX PAGE and this shows one individual stock that user clicked on from the watchlist. This will show user all news and information related to stock from watchlist that they clicked on
-		key: 'StockNews',
-		path: '/:id'
-	},
-	{
 		Component: WatchList, // This is the WATCHLIST ROUTE - Full CRUD functionality rests with this Component. This route will allow user to create full stock watchlist
 		key: 'WatchList',
 		path: '/watchlist'
+	},
+	{
+		Component: StockNews, // SHOW PAGE - MUST BE ABOVE INDEX PAGE and BELOW all other routes this shows one individual stock that user clicked on from the watchlist. This will show user all news and information related to stock from watchlist that they clicked on
+		key: 'StockNews',
+		path: '/:id'
 	},
 	{
 		Component: App, // INDEX/HOME PAGE of site

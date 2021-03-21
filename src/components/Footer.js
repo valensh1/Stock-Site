@@ -49,6 +49,7 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className="social-media-icons">
+				<h5>Follow Us</h5>
 				<a href="https://www.facebook.com">
 					<i className="huge facebook icon"></i>
 				</a>
@@ -60,6 +61,9 @@ const Footer = () => {
 				</a>
 				<a href="https://www.snapchat.com">
 					<i className="huge snapchat icon"></i>
+				</a>
+				<a href="https://www.youtube.com">
+					<i className="huge youtube icon"></i>
 				</a>
 			</div>
 		</div>
