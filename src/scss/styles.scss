@@ -75,30 +75,54 @@ body {
   }
 }
 
+// PRODUCTS OFFERED ON HOME PAGE SUCH AS CHARTS, CUSTOM WATCHLISTS, STOCK NEWS, FINANCIAL ADVICE, ONLINE TRADING TUTORIALS
+.products-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+        #products-header {
+          position: absolute;
+          left: 5%;
+          font-size: 1.5vw;
+        }  
+        .card {     // Card-Container; Each product offering on home page is a card
+            left: 0%;
+            margin-left: 1%;
+            margin-top: 2.5%;
+              .card-body {   // Body of the card which wraps the heading and the captions
+                background-color: black;
+                color: white;
+                width: 100%;
+                    .card-title{  // Card title
+                      font-size: 25px;
+                      text-align: center;
+                      text-decoration: underline;
+                    }
+                    .card-text{    // <p> tag inside the card which explains what each product offering is
+                      font-size: 15px;
+                    }
+                  }
+        .card-img-top{    // Styling for actual image on each card
+          background-color: gray;
+          height: 30vh;
+            }
+        }
+    }
+
+    #featured-on-image{
+      position: absolute;
+      left: 35%;
+     
+
+    }
+
 
 
 
 
   
   
-  // @keyframes Bull {
-  //   // 0% {transform: scale(.5)}
-  //   5% {transform: scale(1.0); left: 5%; opacity: 1}
-  //   10% {transform: scale(1.0); left: 10%; opacity: 1}
-  //   15% {transform: scale(1.0); left: 15%; opacity: 1}
-  //   20% {transform: scale(1.0); left: 20%; opacity: 1}
-  //   25% {transform: scale(1.0); left: 25%; opacity: 1}
-  //   30% {transform: scale(1.0); left: 30%; opacity: 1}
-  //   35% {transform: scale(1.0); left: 35%; opacity: 1}
-  //   40% {transform: scale(1.0); left: 40%; opacity: 1}
-  //   45% {transform: scale(1.0); left: 40%; opacity: 1}
-  //   50% {transform: scale(1.5); left: 40%; opacity: 1}
-  //   60% {transform: scale(1.8); left: 40%; top: 5%; opacity: .8}
-  //   70% {transform: scale(2.1); left: 40%; top: 15%; opacity: .6}
-  //   80% {transform: scale(2.4); left: 40%; top: 20%; opacity: .4}
-  //   90% {transform: scale(2.7); left: 40%; top: 25%; opacity: .2}
-  //   100% {transform: scale(3.0); left: 40%; top: 33%; opacity: 0}
-  //   }
+  
 
 // Overall watchlist container which INCLUDES the search bar and watchlist
 .watchlist-overallContainer {
@@ -184,6 +208,16 @@ body, html {
 }
 
 
+
+
+
+
+
+
+
+
+
+
 // .bg { // Must make sure the image is wrapped in the overall container in React or in HTML for it to work and might need to make the box that the div is in 100% height and 100% width
 //   background-image: url("https://i.imgur.com/jSXvuzP.jpg"); /* The image used */
 //   height: 100%; /* You must set a specified height */
@@ -192,41 +226,24 @@ body, html {
 //   background-size: cover; /* Resize the background image to cover the entire container */
 // }
 
-
-
-
-
-.about-container {
-  .card {
-    margin-left: 1%;
-    margin-top: 2%;
-  }
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
- .card {
- left: 2%;
- .card-body {
-   background-color: black;
-   color: white;
-   width: 100%;
-  .card-title{
-    font-size: 25px;
-    text-align: center;
-    text-decoration: underline;
-  }
-  .card-text{
-    font-size: 15px;
-  }
-    }
- .card-img-top{
-   background-color: gray;
-   height: 40vh;
-    }
-  }
-}
-
-
+// @keyframes Bull {
+  //   // 0% {transform: scale(.5)}
+  //   5% {transform: scale(1.0); left: 5%; opacity: 1}
+  //   10% {transform: scale(1.0); left: 10%; opacity: 1}
+  //   15% {transform: scale(1.0); left: 15%; opacity: 1}
+  //   20% {transform: scale(1.0); left: 20%; opacity: 1}
+  //   25% {transform: scale(1.0); left: 25%; opacity: 1}
+  //   30% {transform: scale(1.0); left: 30%; opacity: 1}
+  //   35% {transform: scale(1.0); left: 35%; opacity: 1}
+  //   40% {transform: scale(1.0); left: 40%; opacity: 1}
+  //   45% {transform: scale(1.0); left: 40%; opacity: 1}
+  //   50% {transform: scale(1.5); left: 40%; opacity: 1}
+  //   60% {transform: scale(1.8); left: 40%; top: 5%; opacity: .8}
+  //   70% {transform: scale(2.1); left: 40%; top: 15%; opacity: .6}
+  //   80% {transform: scale(2.4); left: 40%; top: 20%; opacity: .4}
+  //   90% {transform: scale(2.7); left: 40%; top: 25%; opacity: .2}
+  //   100% {transform: scale(3.0); left: 40%; top: 33%; opacity: 0}
+  //   }
 
 
 

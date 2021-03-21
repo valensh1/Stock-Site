@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 
 export default function About(props) {
 	return (
-		<div className="about-container">
+		<div className="products-container">
+			<h1 className="section-header" id="products-header">
+				Product Offerings
+			</h1>
 			<div className="card" style={{ width: '25%' }}>
 				<img
 					className="card-img-top"
@@ -60,7 +63,7 @@ export default function About(props) {
 			<div className="card financial-advice-card" style={{ width: '25%' }}>
 				<img
 					className="card-img-top"
-					src="https://images.pexels.com/photos/5715850/pexels-photo-5715850.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+					src="https://www.moneycrashers.com/wp-content/uploads/2018/12/choose-financial-advisor-1068x713.jpg"
 					alt="Card image cap"
 				/>
 				<div className="card-body">
@@ -75,7 +78,7 @@ export default function About(props) {
 				</div>
 			</div>
 
-			<div className="card need-name-image" style={{ width: '25%' }}>
+			<div className="card online-trading-tutorials" style={{ width: '25%' }}>
 				<img
 					className="card-img-top"
 					// src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8b25saW5lJTIwY291cnNlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
