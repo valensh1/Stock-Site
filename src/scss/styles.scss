@@ -27,7 +27,7 @@ body {
 .header-container {
   position: relative;
   width: 100vw;
-  height: 50vh;
+  height: 40vh;
 // WALL STREET SIGN IMAGE AT TOP OF HOME SCREEN
     #wall-street-sign {
       position: absolute;
@@ -80,6 +80,7 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-top: 2%;
         #products-header {
           position: absolute;
           left: 5%;
@@ -92,7 +93,7 @@ body {
               .card-body {   // Body of the card which wraps the heading and the captions
                 background-color: black;
                 color: white;
-                width: 100%;
+                width: 25vw;  // Adjusts the size of the text surrounding the product image
                     .card-title{  // Card title
                       font-size: 25px;
                       text-align: center;
@@ -104,16 +105,41 @@ body {
                   }
         .card-img-top{    // Styling for actual image on each card
           background-color: gray;
-          height: 30vh;
+          height: 25vh;
+          width: 25vw;  // Adjusts the size of the actual image in the product offering section
             }
         }
     }
 
-    #featured-on-image{
-      position: absolute;
-      left: 35%;
-     
+    // CONTAINER THAT WRAPS THE FEATURED ON SECTION OF THE HOME PAGE
+    .featured-on-container{
+        display: block;
+        height: 15vh;
+        margin-top: 1.5%;
+        #featured-on-image{   // Image containing all the companies that featured in such as CNBC, Wall St Journal, etc.
+          position: absolute;
+          left: 35%;
+          width: 30vw;
+          height: 17.5vh;
+        }
+  }
 
+  // FOOTER CONTAINER - WRAPS THE ENTIRE FOOTER SECTION OF HOME PAGE   
+  .footer-container {
+      position: relative;
+      background-color: black;
+      width: 100vw;
+      height: 30vh;
+      color: white;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: 2.7%;
+          .social-media-icons {
+              position: absolute;
+              bottom: 0%;
+              right: 0%;
+          }
     }
 
 

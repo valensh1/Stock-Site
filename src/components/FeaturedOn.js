@@ -2,7 +2,7 @@ import React from 'react';
 
 const FeaturedOn = () => {
 	return (
-		<div className>
+		<div className="featured-on-container">
 			{/* <img id="featured-on-image" src="https://i.imgur.com/CNpNFcg.png" /> */}
 			<img
 				className="ui huge circular image featured-on-image"
