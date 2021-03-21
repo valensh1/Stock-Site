@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 @import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 
 body {
@@ -22,6 +23,80 @@ body {
   width: 100vw;
 }
 
+// HEADER CONTAINER THAT WRAPS WHOLE HEADER SECTION OF WEBSITE
+.header-container {
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+// WALL STREET SIGN IMAGE AT TOP OF HOME SCREEN
+    #wall-street-sign {
+      position: absolute;
+      top:0%;
+      width: 100%;
+      height: 100%
+    }
+// WRAPS THE ENTIRE TITLE AND CLIP ARTS
+  #title-image-container {
+// TITLE OF WEBSITE
+    #title { 
+      display: inline-block;
+      position: absolute;
+      width: 33.33%;
+      left: 33.34%;
+      font-family: 'Anton', sans-serif;
+      font-size: 5vh;
+      color: rgb(0, 153, 153);
+      animation-name: titleAnimation;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+    }
+// TITLE OF WEBSITE ANIMATION
+@keyframes titleAnimation {
+  // 0% {transform: scale(.5)}
+  50% {transform: rotatex(180deg)}
+  100% {transform: rotatex(360deg)}
+  }
+  // WALL STREET BULL LOGO IN HEADER OF WEBSITE
+    #bull-drawing {
+      position: absolute;
+      left: 33%;
+      top: -2%;
+      height: 15%;
+    }
+// WALL STREET STOCK MARKET LOGO IN HEADER OF WEBSITE
+    #stock-logo {
+      position: absolute;
+      right: 32%;
+      top: -17%;
+      height: 45%;
+    }
+  }
+}
+
+
+
+
+
+  
+  
+  // @keyframes Bull {
+  //   // 0% {transform: scale(.5)}
+  //   5% {transform: scale(1.0); left: 5%; opacity: 1}
+  //   10% {transform: scale(1.0); left: 10%; opacity: 1}
+  //   15% {transform: scale(1.0); left: 15%; opacity: 1}
+  //   20% {transform: scale(1.0); left: 20%; opacity: 1}
+  //   25% {transform: scale(1.0); left: 25%; opacity: 1}
+  //   30% {transform: scale(1.0); left: 30%; opacity: 1}
+  //   35% {transform: scale(1.0); left: 35%; opacity: 1}
+  //   40% {transform: scale(1.0); left: 40%; opacity: 1}
+  //   45% {transform: scale(1.0); left: 40%; opacity: 1}
+  //   50% {transform: scale(1.5); left: 40%; opacity: 1}
+  //   60% {transform: scale(1.8); left: 40%; top: 5%; opacity: .8}
+  //   70% {transform: scale(2.1); left: 40%; top: 15%; opacity: .6}
+  //   80% {transform: scale(2.4); left: 40%; top: 20%; opacity: .4}
+  //   90% {transform: scale(2.7); left: 40%; top: 25%; opacity: .2}
+  //   100% {transform: scale(3.0); left: 40%; top: 33%; opacity: 0}
+  //   }
 
 // Overall watchlist container which INCLUDES the search bar and watchlist
 .watchlist-overallContainer {
@@ -107,57 +182,17 @@ body, html {
 }
 
 
-.bg { // Must make sure the image is wrapped in the overall container in React or in HTML for it to work and might need to make the box that the div is in 100% height and 100% width
-  background-image: url("https://i.imgur.com/jSXvuzP.jpg"); /* The image used */
-  height: 100%; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-}
+// .bg { // Must make sure the image is wrapped in the overall container in React or in HTML for it to work and might need to make the box that the div is in 100% height and 100% width
+//   background-image: url("https://i.imgur.com/jSXvuzP.jpg"); /* The image used */
+//   height: 100%; /* You must set a specified height */
+//   background-position: center; /* Center the image */
+//   background-repeat: no-repeat; /* Do not repeat the image */
+//   background-size: cover; /* Resize the background image to cover the entire container */
+// }
 
-#bull-drawing {
-  position: absolute;
-  animation-name: Bull;
-  animation-duration: 2.5s;
-  animation-iteration-count: 1;
-  z-index: 1;
-  opacity: 0;
-}
 
-@keyframes Bull {
-  // 0% {transform: scale(.5)}
-  5% {transform: scale(1.0); left: 5%; opacity: 1}
-  10% {transform: scale(1.0); left: 10%; opacity: 1}
-  15% {transform: scale(1.0); left: 15%; opacity: 1}
-  20% {transform: scale(1.0); left: 20%; opacity: 1}
-  25% {transform: scale(1.0); left: 25%; opacity: 1}
-  30% {transform: scale(1.0); left: 30%; opacity: 1}
-  35% {transform: scale(1.0); left: 35%; opacity: 1}
-  40% {transform: scale(1.0); left: 40%; opacity: 1}
-  45% {transform: scale(1.0); left: 40%; opacity: 1}
-  50% {transform: scale(1.5); left: 40%; opacity: 1}
-  60% {transform: scale(1.8); left: 40%; top: 5%; opacity: .8}
-  70% {transform: scale(2.1); left: 40%; top: 15%; opacity: .6}
-  80% {transform: scale(2.4); left: 40%; top: 20%; opacity: .4}
-  90% {transform: scale(2.7); left: 40%; top: 25%; opacity: .2}
-  100% {transform: scale(3.0); left: 40%; top: 33%; opacity: 0}
-  }
 
-/* ANIMATION OF TITLE OF WEBSITE */
-#title { 
-  font-family: 'Oi', cursive;
-  font-size: 70px;
-  color: rgb(0, 153, 153);
-  animation-name: titleAnimation;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-}
 
-@keyframes titleAnimation {
-  // 0% {transform: scale(.5)}
-  50% {transform: rotatex(180deg)}
-  100% {transform: rotatex(360deg)}
-  }
 
 .about-container {
   .card {
