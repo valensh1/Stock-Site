@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const GeneralMarketData = () => {
+	const [APIData, setAPIData] = useState('0'); // Might need to adjust beginning state. This could cause below not to render.
 	useEffect(() => {
 		(async () => {
 			try {
@@ -9,13 +10,19 @@ const GeneralMarketData = () => {
 				);
 				const data = await response.json();
 				console.log(data);
+				console.log(data[0].price);
+				await setAPIData(data);
 			} catch (error) {
 				console.error(error);
 			}
 		})();
-	}, []);
+	}, [APIData]);
 
-	return <div>This is the general market data component</div>;
+	return (
+		<div>
+			<h1>{APIData[0].price}</h1>
+		</div>
+	);
 };
 
 export default GeneralMarketData;
