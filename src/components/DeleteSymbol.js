@@ -23,7 +23,7 @@ export const DeleteSymbol = props => {
 		<i
 			id="trash-can"
 			onClick={handleDelete}
-			className="large red trash icon"
+			className="huge red trash icon"
 		></i>
 	);
 };

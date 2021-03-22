@@ -9,6 +9,12 @@ body {
   width: 100vw;
 }
 
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow:visible
+}
+
 .NavBar {
   display: flex;
   justify-content: space-around;
@@ -116,12 +122,12 @@ body {
         display: block;
         height: 15vh;
         margin-top: 1.5%;
-        #featured-on-image{   // Image containing all the companies that featured in such as CNBC, Wall St Journal, etc.
-          position: absolute;
-          left: 35%;
-          width: 30vw;
-          height: 17.5vh;
-        }
+            #featured-on-image{   // Image containing all the companies that featured in such as CNBC, Wall St Journal, etc.
+              position: absolute;
+              left: 35%;
+              width: 30vw;
+              height: 17.5vh;
+            }
   }
 
   // FOOTER CONTAINER - WRAPS THE ENTIRE FOOTER SECTION OF HOME PAGE   
@@ -143,51 +149,65 @@ body {
                 color: royalblue;
               }
           }
+          .phone-icon {
+            position: absolute;
+            display: flex;
+            bottom: 0%;
+            left: 2%;
+            width: 20vw;
+              #phone-number{
+                margin-left: 5%;
+              }
+          }
     }
 
-
-
-
-
-  
-  
-  
+#bull-logo {
+  position: absolute;
+  height: 5vh;
+  width: 5vw;
+  left: 35%;
+}
+// Input of ticker for watchlist
+    #symbol-input{
+      position: relative;
+      left: 15%;
+      width: 25%;
+        #symbol-search {
+         width: 15vw;
+         font-size: 1.3vw;
+        }
+  }
 
 // Overall watchlist container which INCLUDES the search bar and watchlist
 .watchlist-overallContainer {
-  position: relative;
-  width: 15%;
-  left: 40%;
-  top: 10%;
-  // border: 10px solid green;
-}
-
-// Watchlist container which EXCLUDES the search bar. It only includes the actual watchlist section with the headers for the watchlist
-.watchlist-xSearchbar-container {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: -15%;
-  width: 100%;
-  top: 180%;
-  // border: 10px solid purple;
-}
-
-// Watchlist headers
-.watchlist-headers {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  #last-price-header{
-   position: absolute;
-   left: 50%;
-   color: white;
-  }
-  #symbol-header {
-    margin-left: 2%;
-    color: white;
-  }
-}
+        position: relative;
+        width: 25%;
+        left: 40%;
+       
+  // Watchlist container which EXCLUDES the search bar. It only includes the actual watchlist section with the headers for the watchlist
+  .watchlist-xSearchbar-container {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 0%;
+            width: 100%;
+            top: 180%;
+  // Watchlist headers
+      .watchlist-headers {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        #last-price-header{
+            position: absolute;
+            left: 50%;
+            color: black;
+        }
+        #symbol-header {
+            margin-left: 2%;
+            color: black;
+        }
+      }
+    }
 
 // Actual watchlist with ticker symbols container (DOES NOT INCLUDE HEADERS). Wraps around all symbols in the listing.
 .stock-list-container {
@@ -221,20 +241,23 @@ body {
     }
     .symbol {
       margin-left: 2%;
+      font-size: 1.3vw;
      
     }
     .last-price {
       left: 75%;
+      font-size: 1.3vw;
       
     }
   }
 }
+  }
 
-body, html {
-  height: 100%;
-  width: 100%;
-  overflow:visible
-}
+
+
+
+
+
 
 
 
@@ -273,7 +296,4 @@ body, html {
   //   90% {transform: scale(2.7); left: 40%; top: 25%; opacity: .2}
   //   100% {transform: scale(3.0); left: 40%; top: 33%; opacity: 0}
   //   }
-
-
-
 

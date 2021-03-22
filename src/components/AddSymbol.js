@@ -12,7 +12,7 @@ const AddSymbol = props => {
 					onChange={props.handleChange}
 				/>
 				<button onClick={props.handleSubmit}>
-					<i className="inverted circular search link icon"></i>
+					<i className="inverted large circular search link icon"></i>
 				</button>
 			</div>
 		</form>

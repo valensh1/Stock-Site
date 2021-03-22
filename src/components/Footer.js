@@ -1,4 +1,5 @@
 import React from 'react';
+import PhoneIcon from './Icons/PhoneIcon';
 
 const Footer = () => {
 	return (
@@ -66,6 +67,7 @@ const Footer = () => {
 					<i className="huge youtube icon"></i>
 				</a>
 			</div>
+			<PhoneIcon id="phone-icon-homePage" />
 		</div>
 	);
 };
