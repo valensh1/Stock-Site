@@ -5,7 +5,7 @@ const HomeIcon = () => {
 	return (
 		<div>
 			<Link to={`/`}>
-				<i class="huge teal home icon"></i>
+				<i className="huge teal home icon"></i>
 			</Link>
 		</div>
 	);

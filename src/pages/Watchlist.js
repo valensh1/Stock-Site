@@ -4,6 +4,7 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { DeleteSymbol } from '../components/DeleteSymbol';
 import HomeIcon from '../components/HomeIcon';
+import GeneralMarketData from '../components/GeneralMarketData';
 
 const AlphaVantageAPIKey = process.env.ALPHA_VANTAGE_API_KEY;
 
@@ -103,6 +104,7 @@ export default function App(props) {
 	return (
 		<div>
 			<HomeIcon />
+			<GeneralMarketData />
 			<img id="bull-logo" src="https://i.imgur.com/MBzbnpg.png"></img>
 			<div className="watchlist-overallContainer">
 				<div id="stock-search-bar">
