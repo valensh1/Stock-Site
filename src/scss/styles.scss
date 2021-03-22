@@ -167,6 +167,16 @@ body, html {
   width: 5vw;
   left: 35%;
 }
+
+// Date Picker on Watchlist Page
+#date {
+ position: relative;
+ left: 15%;
+ width: 18.5vw;
+ height: 3.5vh;
+ font-size: 1.3vw;
+}
+
 // Input of ticker for watchlist
     #symbol-input{
       position: relative;
@@ -183,7 +193,6 @@ body, html {
         position: relative;
         width: 25%;
         left: 40%;
-       
   // Watchlist container which EXCLUDES the search bar. It only includes the actual watchlist section with the headers for the watchlist
   .watchlist-xSearchbar-container {
             display: flex;
@@ -249,13 +258,14 @@ body, html {
       font-size: 1.3vw;
       
     }
+    #trash-can {
+      cursor: pointer;
+    }
   }
 }
   }
 
-  #trash-can {
-    cursor: pointer;
-  }
+ 
 
 
 

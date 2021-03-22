@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { DeleteSymbol } from '../components/DeleteSymbol';
 import HomeIcon from '../components/HomeIcon';
 import GeneralMarketData from '../components/GeneralMarketData';
+import DatePicker from '../components/DatePicker';
 
 const AlphaVantageAPIKey = process.env.ALPHA_VANTAGE_API_KEY;
 
@@ -14,6 +15,9 @@ export default function App(props) {
 	let typedSymbol = '';
 	let tickerSymbol = '';
 	let cumulativeAPIData = {};
+	const [dateFrmChild, setDateFrmChild] = useState(
+		new Date().toISOString().substr(0, 10)
+	); // Sets initial state to today's date);
 
 	useEffect(() => {
 		// Immediately Invoked Function Expression needed when use the async function with useEffect hook
@@ -85,7 +89,7 @@ export default function App(props) {
 		const watchlistData = {
 			// Creation of a variable watchlistData which is an object that contains the ticker symbol and last stock price received from the Alpha Vantage API to be send to MongoDB database for storage.
 			symbol: tickerSymbol,
-			lastPrice: data['Time Series (Daily)']['2021-02-26']['5. adjusted close']
+			lastPrice: data['Time Series (Daily)'][dateFrmChild]['5. adjusted close'] // WOULD NEED TO ADJUST DATE HERE IF SOMETHING WRONG WITH DATE FOR SENDING TO DATABASE
 		};
 		try {
 			const response = await axios.post('api/stocks', watchlistData); // Sending of user ticker symbol to MongoDB database for posting/creation of a new ticker symbol into our database for storage.
@@ -107,6 +111,7 @@ export default function App(props) {
 			<GeneralMarketData />
 			<img id="bull-logo" src="https://i.imgur.com/MBzbnpg.png"></img>
 			<div className="watchlist-overallContainer">
+				<DatePicker todayDateChild={date => setDateFrmChild(date)} />
 				<div id="stock-search-bar">
 					<AddSymbol
 						tickerSymbol={typedSymbol}
