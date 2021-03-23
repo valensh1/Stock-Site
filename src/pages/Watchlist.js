@@ -8,6 +8,7 @@ import GeneralMarketData from '../components/GeneralMarketData';
 import DatePicker from '../components/DatePicker';
 
 const AlphaVantageAPIKey = process.env.ALPHA_VANTAGE_API_KEY;
+const FinancialModelingAPI = process.env.FINANCIAL_MODELING_PREP_API;
 
 export default function App(props) {
 	const [DBWatchlist, setDBWatchlist] = useState([]);
@@ -105,6 +106,26 @@ export default function App(props) {
 		setShowDatabase(data);
 	};
 
+	const stockFetches = async () => {
+		let stockListing = [];
+		DBWatchlist.map(stock => {
+			stockListing.push(stock.symbol.toUpperCase());
+		});
+		stockListing = stockListing.join();
+		console.log(stockListing);
+		const response = await fetch(
+			`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=${FinancialModelingAPI}`
+		);
+		const data = await response.json();
+		console.log(data);
+	};
+	stockFetches();
+	let stockPrices = {
+		amzn: 1000,
+		aapl: 125,
+		fb: 195
+	};
+
 	return (
 		<div>
 			<HomeIcon />
@@ -138,6 +159,7 @@ export default function App(props) {
 										<h4 className="last-price" id="lastPrice">
 											${stock.lastPrice}
 										</h4>
+										<h6>{stockPrices[stock.symbol]}</h6>
 									</Link>
 									<DeleteSymbol
 										stockID={stock._id}

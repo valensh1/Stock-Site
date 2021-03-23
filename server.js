@@ -23,7 +23,7 @@ if (process.env.NODE_ENV !== 'development'){
 }
 
 /* Controller Goes Here Remove the tes*/
-app.use('/api/stocks', require('./controllers/stockController')) // new require just like above he just put it inline
+app.use('/api/stocks', require('./controllers/StockController')) // new require just like above he just put it inline
 /* Controller Ends here */
 //LISTENER
 
