@@ -37,28 +37,6 @@ export default function App(props) {
 	}, []); // This useEffect hook pulls data from MongoDB database upon initial rendering of the screen
 
 	useEffect(() => {
-		(async () => {
-			try {
-				let stockListing = [];
-				DBWatchlist.map(stock => {
-					stockListing.push(stock.symbol.toUpperCase());
-				});
-				stockListing = stockListing.join();
-				console.log(stockListing);
-				console.log(FinancialModelingAPI);
-				const response = await fetch(
-					`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=339ab33c2826aa7fcd4a94b1d3a609a2`
-				);
-				const data = await response.json();
-				console.log(data);
-				setAPIData(data);
-			} catch (error) {
-				console.error(error);
-			}
-		})();
-	}, [DBWatchlist]);
-
-	useEffect(() => {
 		// Immediately Invoked Function Expression needed when use the async function with useEffect hook
 		(async () => {
 			try {
@@ -129,6 +107,23 @@ export default function App(props) {
 	const changeStateAfterDelete = data => {
 		setShowDatabase(data);
 	};
+
+	const stockFetches = async () => {
+		let stockListing = [];
+		DBWatchlist.map(stock => {
+			stockListing.push(stock.symbol.toUpperCase());
+		});
+		stockListing = stockListing.join();
+		console.log(stockListing);
+		console.log(FinancialModelingAPI);
+		const response = await fetch(
+			`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=339ab33c2826aa7fcd4a94b1d3a609a2`
+		);
+		const data = await response.json();
+		console.log(data);
+		setAPIData(data);
+	};
+	stockFetches();
 
 	return (
 		<div>
