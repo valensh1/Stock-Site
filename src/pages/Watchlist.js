@@ -8,7 +8,7 @@ import GeneralMarketData from '../components/GeneralMarketData';
 import DatePicker from '../components/DatePicker';
 
 const AlphaVantageAPIKey = process.env.ALPHA_VANTAGE_API_KEY;
-const FinancialModelingAPI = process.env.FINANCIAL_MODELING_PREP_API;
+const FinancialModelingAPI = process.env.FINANCIAL_MODELING_PREP_API_KEY;
 
 export default function App(props) {
 	const [DBWatchlist, setDBWatchlist] = useState([]);
@@ -113,13 +113,15 @@ export default function App(props) {
 		});
 		stockListing = stockListing.join();
 		console.log(stockListing);
+		console.log(FinancialModelingAPI);
 		const response = await fetch(
-			`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=${FinancialModelingAPI}`
+			`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=339ab33c2826aa7fcd4a94b1d3a609a2`
 		);
 		const data = await response.json();
 		console.log(data);
 	};
 	stockFetches();
+
 	let stockPrices = {
 		amzn: 1000,
 		aapl: 125,
