@@ -8,9 +8,9 @@ import { DeleteSymbol } from '../components/DeleteSymbol';
 const Watchlist = () => {
 	const [DBWatchList, setDBWatchList] = useState([]);
 	const [APIData, setAPIData] = useState([]);
-	const [newTickerSymbol, setNewTickerSymbol] = useState('');
+	const [refreshedList, setRefreshedList] = useState('false');
 	let typedSymbol = '';
-	const APIKey = '339ab33c2826aa7fcd4a94b1d3a609a2';
+	const APIKey = '';
 
 	useEffect(() => {
 		// Immediately Invoked Function Expression needed when use the async function with useEffect hook
@@ -52,6 +52,47 @@ const Watchlist = () => {
 			}
 		})();
 	}, []); // This useEffect hook pulls data from MongoDB database upon initial rendering of the screen
+
+	useEffect(() => {
+		// Immediately Invoked Function Expression needed when use the async function with useEffect hook
+		(async () => {
+			try {
+				const response = await fetch('/api/stocks');
+				const data = await response.json();
+				let dataToSort = await data;
+				dataToSort.map(stock => {
+					stock.symbol = stock.symbol.toLowerCase();
+				});
+				let sortedList = dataToSort.sort((a, b) => {
+					let tickerA = a.symbol;
+					let tickerB = b.symbol;
+					if (tickerA < tickerB) {
+						return -1;
+					}
+					if (tickerA > tickerB) {
+						return 1;
+					}
+					return 0;
+				});
+				console.log(sortedList);
+				let stockListing = [];
+				sortedList.map(stock => {
+					stockListing.push(stock.symbol.toUpperCase());
+				});
+				stockListing = stockListing.join();
+				console.log(stockListing);
+				const thirdPartyAPIresponse = await fetch(
+					`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=${APIKey}`
+				);
+				const dataThirdParty = await thirdPartyAPIresponse.json();
+				console.log(dataThirdParty);
+				await setAPIData(dataThirdParty);
+				setDBWatchList(sortedList);
+			} catch (error) {
+				console.error(error);
+			}
+		})();
+	}, [refreshedList]); // This useEffect hook pulls data from MongoDB database upon initial rendering of the screen
 
 	const handleChange = event => {
 		// Purpose of this function is that it takes an event as its argument which is the ticker symbol that the user types in the search bar and saves this ticker symbol in a variable called typedSymbol. This function is passed to the AddSymbol Component to capture the user's ticker symbol input
@@ -126,24 +167,42 @@ const Watchlist = () => {
 		sortDBWatchListAlphabetical(data);
 	};
 
-	const sortDBWatchListAlphabetical = data => {
-		data.map(stock => {
-			stock.symbol = stock.symbol.toLowerCase();
-		});
-		let sortedList = data.sort((a, b) => {
-			let tickerA = a.symbol;
-			let tickerB = b.symbol;
-			if (tickerA < tickerB) {
-				return -1;
-			}
-			if (tickerA > tickerB) {
-				return 1;
-			}
-			return 0;
-		});
-		console.log(sortedList);
-		console.log(DBWatchList);
-		setDBWatchList(sortedList);
+	const sortDBWatchListAlphabetical = async data => {
+		// might need to delete async right here
+		try {
+			data.map(stock => {
+				stock.symbol = stock.symbol.toLowerCase();
+			});
+			let sortedList = data.sort((a, b) => {
+				let tickerA = a.symbol;
+				let tickerB = b.symbol;
+				if (tickerA < tickerB) {
+					return -1;
+				}
+				if (tickerA > tickerB) {
+					return 1;
+				}
+				return 0;
+			});
+			console.log(sortedList); // This was only thing here before
+			console.log(DBWatchList); // This was only thing here before
+			let stockListing = [];
+			sortedList.map(stock => {
+				stockListing.push(stock.symbol.toUpperCase());
+			});
+			stockListing = stockListing.join();
+			console.log(stockListing);
+			const thirdPartyAPIresponse = await fetch(
+				`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=${APIKey}`
+			);
+			const dataThirdParty = await thirdPartyAPIresponse.json();
+			console.log(dataThirdParty);
+			setRefreshedList(!refreshedList);
+			await setAPIData([...APIData, dataThirdParty]);
+			setDBWatchList(sortedList); //This was only one here before
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	return (
