@@ -10,6 +10,7 @@ const Watchlist = () => {
 	const [APIData, setAPIData] = useState([]);
 	const [newTickerSymbol, setNewTickerSymbol] = useState('');
 	let typedSymbol = '';
+	const APIKey = '339ab33c2826aa7fcd4a94b1d3a609a2';
 
 	useEffect(() => {
 		// Immediately Invoked Function Expression needed when use the async function with useEffect hook
@@ -40,7 +41,7 @@ const Watchlist = () => {
 				stockListing = stockListing.join();
 				console.log(stockListing);
 				const thirdPartyAPIresponse = await fetch(
-					`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=339ab33c2826aa7fcd4a94b1d3a609a2`
+					`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=${APIKey}`
 				);
 				const dataThirdParty = await thirdPartyAPIresponse.json();
 				console.log(dataThirdParty);
@@ -79,10 +80,41 @@ const Watchlist = () => {
 	const sendToDB = async newSymbol => {
 		// Once user submits form and user input of ticker symbol is prepared and converted into a Javascript object this function is invoked to send the relevant data to our MongoDB database for storage.
 		try {
-			const response = await axios.post('api/stocks', newSymbol); // Sending of user ticker symbol to MongoDB database for posting/creation of a new ticker symbol into our database for storage.
+			let response = await axios.post('api/stocks', newSymbol); // Sending of user ticker symbol to MongoDB database for posting/creation of a new ticker symbol into our database for storage.
+			response = await fetch('/api/stocks');
+			const data = await response.json();
+			let dataToSort = await data;
+			dataToSort.map(stock => {
+				stock.symbol = stock.symbol.toLowerCase();
+			});
+			let sortedList = dataToSort.sort((a, b) => {
+				let tickerA = a.symbol;
+				let tickerB = b.symbol;
+				if (tickerA < tickerB) {
+					return -1;
+				}
+				if (tickerA > tickerB) {
+					return 1;
+				}
+				return 0;
+			});
+			console.log(sortedList);
+			let stockListing = [];
+			sortedList.map(stock => {
+				stockListing.push(stock.symbol.toUpperCase());
+			});
+			stockListing = stockListing.join();
+			console.log(stockListing);
+			const thirdPartyAPIresponse = await fetch(
+				`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=${APIKey}`
+			);
+			const dataThirdParty = await thirdPartyAPIresponse.json();
+			console.log(dataThirdParty);
+			await setAPIData(dataThirdParty);
+			setDBWatchList(sortedList);
 			console.log(DBWatchList);
-			setDBWatchList([...DBWatchList, newSymbol]); // Calling of useState hook setShowDatabase which updates the state for the brand new ticker symbol the user entered and because now the state has changed it forces React to re-render which will force our screen to render all the elements from our database including the newly entered symbol by the user.
-			setNewTickerSymbol(newSymbol);
+			// setDBWatchList([...DBWatchList, newSymbol]); // Calling of useState hook setShowDatabase which updates the state for the brand new ticker symbol the user entered and because now the state has changed it forces React to re-render which will force our screen to render all the elements from our database including the newly entered symbol by the user.
+			// setNewTickerSymbol(newSymbol);
 		} catch (error) {
 			// If an error is caught in this process log the error message to user
 			console.error(error);
