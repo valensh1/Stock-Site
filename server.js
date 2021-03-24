@@ -1,4 +1,5 @@
 require('dotenv').config();
+const cors = require('cors'); // Must have this in server.js file
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -21,6 +22,8 @@ app.use(express.json());
 if (process.env.NODE_ENV !== 'development'){
   app.use(express.static('public'))
 }
+app.use(cors()); // Must have this on server.js file
+
 
 /* Controller Goes Here Remove the tes*/
 app.use('/api/stocks', require('./controllers/StockController')) // new require just like above he just put it inline

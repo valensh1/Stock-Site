@@ -4,10 +4,8 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { DeleteSymbol } from '../components/DeleteSymbol';
 import HomeIcon from '../components/HomeIcon';
-import FinancialModeling from './FinancialModelingAPI';
 
 export default function App(props) {
-	console.log(FinancialModeling);
 	const [DBWatchlist, setDBWatchlist] = useState([]);
 	const [APIData, setAPIData] = useState(['AAPL']);
 	const [newTickerSymbol, setNewTickerSymbol] = useState('');
@@ -50,7 +48,6 @@ export default function App(props) {
 				console.log(APIData);
 				console.log(APIData[0]);
 				console.log(APIData[0].price);
-				// console.log(APIData[1].price);
 			} catch (error) {
 				console.error(error);
 			}
@@ -87,8 +84,7 @@ export default function App(props) {
 			stockListing = stockListing.join();
 			console.log(stockListing);
 			const thirdPartyAPIresponse = await fetch(
-				`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=`
-				// `https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=${FinancialModelingAPI}`
+				`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=339ab33c2826aa7fcd4a94b1d3a609a2`
 			);
 			const dataThirdParty = await thirdPartyAPIresponse.json();
 			console.log(dataThirdParty);
@@ -162,8 +158,6 @@ export default function App(props) {
 					</div>
 					<div className="stock-list-container">
 						{DBWatchlist.map((stock, index) => {
-							console.log('DBWathlist:', DBWatchlist);
-							console.log('APIData:', APIData);
 							return (
 								<div
 									className={stock.symbol}
