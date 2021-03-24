@@ -4,10 +4,8 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { DeleteSymbol } from '../components/DeleteSymbol';
 import HomeIcon from '../components/HomeIcon';
-import FinancialModeling from './FinancialModelingAPI';
 
 export default function App(props) {
-	console.log(FinancialModeling);
 	const [DBWatchlist, setDBWatchlist] = useState([]);
 	const [APIData, setAPIData] = useState(['AAPL']);
 	const [newTickerSymbol, setNewTickerSymbol] = useState('');
