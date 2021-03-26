@@ -5,6 +5,7 @@ import { Line, defaults } from 'react-chartjs-2'; // Importing the Bar Chart typ
 //defaults.global.legend.position = 'bottom'; // This will change legend to bottom of chart if you want to switch it to bottom. They also have 'left', 'right', 'top' properties as well.
 
 const PriceChart = props => {
+	// Only props needed for this PriceChart Component to work is it needs closing prices for data labels identified below
 	console.log(props);
 	return (
 		<div className="line-chart">

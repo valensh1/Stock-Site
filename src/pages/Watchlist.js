@@ -279,7 +279,7 @@ Need to put this before the setDBWatchList since it has a race condition and als
 									<Link to={`/${stock._id}`} symbol={stock.symbol}>
 										<h4 className="symbol">{stock.symbol}</h4>
 										<h4 className="last-price" id="lastPrice">
-											${APIData[index].price}
+											${APIData[index].price.toFixed(2) * 1}
 										</h4>
 									</Link>
 									<DeleteSymbol

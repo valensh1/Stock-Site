@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 @import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
 
 
 body {
@@ -264,6 +266,62 @@ body, html {
   }
 }
   }
+
+  // STOCK SPECIFIC DATA PAGE / SHOW PAGE
+  #stock-specific-data-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+
+    // HEADER SECTION
+      #stock-specific-company-heading {
+        position: absolute;
+        text-align: center;
+        border-bottom: 2.5px solid blue;
+        height: 20vh;
+        width: 100vw;
+
+        
+        #stock-specific-heading-price {
+          position: absolute;
+          right: 37vw;
+          top: 3.7vh;
+          display: flex;
+          width: 10vw;
+          justify-content: space-between;
+          align-items: baseline;
+        }
+         // Company Name and Ticker Symbol at top of Stock Specific Data Page / Show Page
+         span {
+          font-size: 1.6vw;
+        }
+        #stock-specific-heading-ticker {
+          font-size: 1.5vw;
+          font-style: oblique;
+        }
+
+        // COMPANY LOGO
+          img {
+            height: 12vh;
+            width: 10vw;
+          }
+       
+        }
+      // END OF HEADER SECTION OF PAGE
+
+      // COMPANY PRICE AND OTHER METRIC SECTION
+        #stock-specific-nonheading-section{
+          position: absolute;
+          top: 23vh;
+          width: 100vw;
+          font-size: 1vw;
+          display: flex;
+          justify-content: space-around;
+          
+
+        }
+  }
+
 
  
 
