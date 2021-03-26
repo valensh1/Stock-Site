@@ -268,8 +268,8 @@ Need to put this before the setDBWatchList since it has a race condition and als
 					</div>
 					<div className="stock-list-container">
 						{DBWatchList.map((stock, index) => {
-							console.log(DBWatchList);
-							console.log(APIData);
+							// console.log(DBWatchList);
+							// console.log(APIData);
 							return (
 								<div
 									className={stock.symbol}
