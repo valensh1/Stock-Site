@@ -1,6 +1,9 @@
+require('dotenv').config();
 const Watchlist = require('../models/Watchlist');
 const express = require('express');
 const stockRouter = express.Router();
+
+const Financial_Modeling_API = process.env.FINANCIAL_API_KEY; // ------------------------MIGHT NEED TO DELETE THIS
 
 // CREATE
 stockRouter.post('/', async (req, res) => {
@@ -36,16 +39,23 @@ stockRouter.delete('/', async (req, res) => {
 	} 	
 });
 
+// API Key ROUTE
+stockRouter.get('/key', (req, res) => {
+	res
+	.status(200)
+	.json({key: Financial_Modeling_API})
+});
+
 // SHOW ROUTE
 stockRouter.get('/:id', async (req, res) => {
 	try {
 		const foundStocks = await Watchlist.findById(req.params.id);
-		await foundStocks
 		res.status(200).json(foundStocks);
 	} catch (error) {
 		res.status(400).json(error);
 	}
 });
+
 
 // DELETE/DESTROY ROUTE
 stockRouter.delete('/:id', async (req, res) => {
