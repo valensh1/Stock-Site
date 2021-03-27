@@ -268,59 +268,146 @@ body, html {
   }
 
   // STOCK SPECIFIC DATA PAGE / SHOW PAGE
-  #stock-specific-data-container {
+  #stock-news-container {
     position: relative;
-    height: 100vh;
-    width: 100vw;
+    #stock-specific-data-container {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
 
-    // HEADER SECTION
-      #stock-specific-company-heading {
-        position: absolute;
-        text-align: center;
-        border-bottom: 2.5px solid blue;
-        height: 20vh;
-        width: 100vw;
-
-        
-        #stock-specific-heading-price {
+      // HEADER SECTION
+        #stock-specific-company-heading {
           position: absolute;
-          right: 37vw;
-          top: 3.7vh;
-          display: flex;
-          width: 10vw;
-          justify-content: space-between;
-          align-items: baseline;
-        }
-         // Company Name and Ticker Symbol at top of Stock Specific Data Page / Show Page
-         span {
-          font-size: 1.6vw;
-        }
-        #stock-specific-heading-ticker {
-          font-size: 1.5vw;
-          font-style: oblique;
-        }
-
-        // COMPANY LOGO
-          img {
-            height: 12vh;
-            width: 10vw;
-          }
-       
-        }
-      // END OF HEADER SECTION OF PAGE
-
-      // COMPANY PRICE AND OTHER METRIC SECTION
-        #stock-specific-nonheading-section{
-          position: absolute;
-          top: 23vh;
+          text-align: center;
+          border-bottom: 2.5px solid blue;
+          height: 20vh;
           width: 100vw;
-          font-size: 1vw;
-          display: flex;
-          justify-content: space-around;
-          
 
+          
+          #stock-specific-heading-price {
+            position: absolute;
+            right: 36vw;
+            top: 6vh;
+            display: flex;
+            width: 10vw;
+            justify-content: space-around;
+            align-items: baseline;
+             h3, h4 {
+               font-size: 1vw;
+               margin-left: 10%;
+             }
+          }
+          // Company Name and Ticker Symbol at top of Stock Specific Data Page / Show Page
+          span {
+            font-size: 1.6vw;
+          }
+          #stock-specific-heading-ticker {
+            font-size: 1.5vw;
+            font-style: oblique;
+          }
+
+          // COMPANY LOGO
+            img {
+              height: 10vh;
+              width: 10vw;
+              padding-right: 1.9vw;
+            }
+        
+          }
+        // END OF HEADER SECTION OF PAGE
+
+        // COMPANY PRICE AND OTHER METRIC SECTION
+          #stock-specific-nonheading-section{
+            position: absolute;
+            top: 23vh;
+            width: 100vw;
+            height: 100vh;
+            font-size: 1vw;
+            display: flex;
+            justify-content: space-around;
+              #stock-specific-company-data {
+                left: -10%;
+
+              }
+
+          }
+    }
+
+    #data-leftside-chart {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      // border: 2px solid green;
+      width: 30%;
+      left: 5%;
+        #stock-specific-company-data{
+          margin-left: 25%;
         }
+        h2, h4 {
+          margin-top: 1%;
+          padding-top: 0%;
+          font-size: .7vw;
+          text-align: right;
+        }
+    }
+
+    #data-rightside-chart {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      // border: 2px solid red;
+      width: 30%;
+      right: 10%;
+        #stock-specific-ratios-valuation {
+          margin-right: 50%;
+        }
+        h2, h4 {
+          font-size: .7vw;
+        }
+    }
+
+    #stock-specific-other-info {
+      position: absolute;
+      top: 10vh;
+      right: 26vw;
+        h4 {
+      font-size: .6vw;
+        }
+    }
+
+      #line-chart {
+        position: relative;
+        bottom: 80vh;
+        left: 35vw;
+        width: 25vw;
+        height: 31vh;
+         
+      }
   }
+
+  #company-data-header {
+    text-decoration: underline;
+  }
+
+  #price-header {
+    text-decoration: underline;
+  }
+
+  #volume-header {
+    text-decoration: underline;
+  }
+
+  #valuation-header {
+    text-decoration: underline;
+  }
+
+
+
+
+
+  
 
 
  

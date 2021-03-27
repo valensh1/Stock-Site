@@ -46,7 +46,7 @@ export default function StockNews(props) {
 	}, []); // Empty brackets here means this useEffect hook only runs on initial render of screen
 
 	return (
-		<div>
+		<div id="stock-news-container">
 			<HomeIcon />
 			{console.log(ticker)}
 			{console.log(stockSpecificAPIData)}
@@ -54,7 +54,7 @@ export default function StockNews(props) {
 				ticker={ticker}
 				stockSpecificAPIData={stockSpecificAPIData}
 			/>
-			{/* <PriceChart stockSpecificAPIData={stockSpecificAPIData}/> */}
+			<PriceChart stockSpecificAPIData={stockSpecificAPIData} />
 		</div>
 	);
 }
