@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 import PriceChart from '../components/PriceChart';
 import HomeIcon from '../components/HomeIcon';
 import StockSpecificData from '../components/StockSpecificData';
-import TestFetch from '../components/TestFetch';
 
 const PolygonAPIKey = 'lb5t4CfGCkFI2pFpkTrfsZlaswHw8xIC';
 const AlphaVantageAPIKey = process.env.ALPHA_VANTAGE_API_KEY;
-const FinancialModelingAPIKey = '339ab33c2826aa7fcd4a94b1d3a609a2';
+const FinancialModelingAPIKey = '';
 
 export default function StockNews(props) {
 	// console.log(props);
@@ -32,7 +31,7 @@ export default function StockNews(props) {
 				const data2 = await response2.json();
 				console.log(data2);
 				const response3 = await fetch(
-					`https://financialmodelingprep.com/api/v3/quote/${tickerForSearch}?apikey=${FinancialModelingAPIKey}` // API for stock specific quote information
+					`https://financialmodelingprep.com/api/v3/quote/${tickerForSearch}?apikey=${FinancialModelingAPIKey}` // API for stock specific quote information which includes closing prices, high, low price for day
 				);
 				const data3 = await response3.json();
 				console.log(data3);
@@ -60,8 +59,7 @@ export default function StockNews(props) {
 				ticker={ticker}
 				stockSpecificAPIData={stockSpecificAPIData}
 			/>
-			{/* <PriceChart dailyClosingPrices={dailyClosingPrices} /> */}
-			<TestFetch ticker={dailyClosingPrices} />
+			<PriceChart ticker={dailyClosingPrices} />
 		</div>
 	);
 }

@@ -1,74 +1,35 @@
 // Need to install react-chartjs-2 from npm. To install when inside your application folder in the Terminal type in the following: npm install --save react-chartjs-2 chart.js
-import Chart from 'chart.js';
 import React, { useState, useEffect, useRef } from 'react';
 import { Line, defaults } from 'react-chartjs-2'; // Importing the Bar Chart type from the 'react-chartjs-2' library which essentially tells Charts.js that this is a bar chart. Need to import defaults as well if you are going to change defaults such as the position of the legend as in code below.
 
-//defaults.global.legend.position = 'bottom'; // This will change legend to bottom of chart if you want to switch it to bottom. They also have 'left', 'right', 'top' properties as well.
-
-Chart.defaults.global.responsive = true; // This allows all charts to be responsive.
-
 const PriceChart = props => {
-	// const [dayPrices, setDayPrices] = useState([]);
-	// Only props needed for this PriceChart Component to work is it needs closing prices for data labels identified below
 	console.log(props);
-	const { dailyClosingPrices } = props; // Destructuring of the props object so I don't need to use props in JSX tree below
-	console.log(dailyClosingPrices);
-	console.log(dailyClosingPrices[0]);
-	// console.log(dailyClosingPrices[0].close);
+	const { ticker } = props; // Destructure of props
+	const rolling30DayClosingPrices = [];
+	const rolling30DayDates = [];
 
-	// console.log(stockSpecificAPIData);
-	// console.log(stockSpecificAPIData[2]);
-	// console.log(stockSpecificAPIData[2][0]);
-
-	// setDayPrices(stockSpecificAPIData);
-	// const historicalClosingPrices = [];
-	const historicalClosingPrices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-	// historicalClosingPrices.push(dailyClosingPrices[0].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[1].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[2].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[3].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[4].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[5].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[6].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[7].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[8].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[9].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[10].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[11].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[12].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[1].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[14].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[15].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[16].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[17].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[18].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[19].close.toFixed(2) * 1);
-	// historicalClosingPrices.push(stockSpecificAPIData[20].close.toFixed(2) * 1);
+	if (ticker.length) {
+		ticker[0].historical.map((el, i) => {
+			if (i < 30) {
+				rolling30DayClosingPrices.unshift(el.close);
+				rolling30DayDates.unshift(el.date);
+			}
+		});
+	}
+	console.log(rolling30DayClosingPrices);
+	console.log(rolling30DayDates);
 
 	return (
 		<div>
-			{dailyClosingPrices.length ? (
+			{ticker.length ? (
 				<div id="line-chart">
 					<Line // Per documentation you are supposed to have a key value pair here such as type: 'bar'; However, because we imported { Bar }  in code above from the 'react-chartjs-2' library we only need to create the <Bar Component here and close it at the end after we input all the lines of code between it. This is how it works with React.
 						data={{
-							labels: [
-								'Apr',
-								'May',
-								'Jun',
-								'Jul',
-								'Aug',
-								'Sep',
-								'Oct',
-								'Nov',
-								'Dec',
-								'Jan',
-								'Feb',
-								'Mar'
-							], // Sets the x-axis labels that goes horizontally across screen. Place '' in the spot of the array where you don't want to show the label.
+							labels: rolling30DayDates, // Sets the x-axis labels that goes horizontally across screen. Place '' in the spot of the array where you don't want to show the label.
 							datasets: [
 								{
-									label: 'Rolling 12 Month - Closing Stock Prices', // Label at top of bar chart that shows what each bar represents
-									data: historicalClosingPrices, // Data set that is mapped out in bars
+									label: 'Rolling 30 Day - Closing Stock Prices', // Label at top of bar chart that shows what each bar represents
+									data: rolling30DayClosingPrices, // Data set that is mapped out in bars
 									backgroundColor: 'blue', // This is the actual color of the bars on the chart. If you do not use an array here it will make all the bars the same color; Example (backgroundColor: 'purple') will make all bars purple. If you make an array however with various colors each different bar will be a different color
 									borderColor: 'blue', // This is the border you can put around a bar and you can have borders with different colors than the actuals bars themselves
 									borderWidth: 10, // This is the border width or how big you want the borders around the bars to look. The bigger the number the thicker the border
