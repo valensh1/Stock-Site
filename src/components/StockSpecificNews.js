@@ -15,10 +15,10 @@ const StockSpecificNews = props => {
 							<div id="stock-specific-articles-content">
 								<h6>{ticker.site}</h6>
 								<h3>{ticker.title}</h3>
-								<p>{ticker.text}</p>
 								<a href={ticker.url} target="_blank">
 									<img src={ticker.image}></img>
 								</a>
+								<p>{ticker.text}</p>
 							</div>
 						);
 				  })

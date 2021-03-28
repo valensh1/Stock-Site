@@ -98,6 +98,9 @@ const StockSpecificData = props => {
 							</div>
 						</div>
 						<div className="stock-specific-data" id="stock-specific-other-info">
+							<h6 id="company-description">
+								Company Description: {stockSpecificAPIData[0].description}
+							</h6>
 							<h4>
 								Next Earnings Announcement Date:{' '}
 								{new Date(
