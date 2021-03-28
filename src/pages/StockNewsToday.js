@@ -27,12 +27,12 @@ export default function StockNews(props) {
 				let tickerForSearch = data.symbol.toUpperCase();
 				await setTicker(tickerForSearch); // Sets state for user ticker symbols stored in our database
 				const response2 = await fetch(
-					`https://financialmodelingprep.com/api/v3/profile/${tickerForSearch}?apikey=${FinancialModelingAPIKey}` // API for stock specific profile information
+					`https://financialmodelingprep.com/api/v3/profile/AAPL?apikey=${FinancialModelingAPIKey}` // API for stock specific profile information
 				);
 				const data2 = await response2.json();
 				console.log(data2);
 				const response3 = await fetch(
-					`https://financialmodelingprep.com/api/v3/quote/${tickerForSearch}?apikey=${FinancialModelingAPIKey}` // API for stock specific quote information
+					`https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=${FinancialModelingAPIKey}` // API for stock specific quote information
 				);
 				const data3 = await response3.json();
 				console.log(data3);
@@ -61,7 +61,7 @@ export default function StockNews(props) {
 				stockSpecificAPIData={stockSpecificAPIData}
 			/>
 			{/* <PriceChart dailyClosingPrices={dailyClosingPrices} /> */}
-			<TestFetch ticker={dailyClosingPrices} />
+			<TestFetch ticker={'GOOGL'} />
 		</div>
 	);
 }

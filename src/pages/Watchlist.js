@@ -10,7 +10,7 @@ const Watchlist = () => {
 	const [APIData, setAPIData] = useState([]);
 	const [refreshedList, setRefreshedList] = useState('false');
 	let typedSymbol = '';
-	const APIKey = '';
+	const APIKey = '339ab33c2826aa7fcd4a94b1d3a609a2';
 
 	// This useEffect is run immediately upon initial rendering of screen; Immediately Invoked Function Expression needed when use the async function with useEffect hook which is the parenthesis before async and the opening and closing parenthesis () at end.
 	useEffect(() => {

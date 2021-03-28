@@ -11,15 +11,19 @@ const PriceChart = props => {
 	// const [dayPrices, setDayPrices] = useState([]);
 	// Only props needed for this PriceChart Component to work is it needs closing prices for data labels identified below
 	console.log(props);
-	const { stockSpecificAPIData } = props; // Destructuring of the props object so I don't need to use props in JSX tree below
+	const { dailyClosingPrices } = props; // Destructuring of the props object so I don't need to use props in JSX tree below
+	console.log(dailyClosingPrices);
+	console.log(dailyClosingPrices[0]);
+	// console.log(dailyClosingPrices[0].close);
+
 	// console.log(stockSpecificAPIData);
 	// console.log(stockSpecificAPIData[2]);
 	// console.log(stockSpecificAPIData[2][0]);
 
 	// setDayPrices(stockSpecificAPIData);
-	const historicalClosingPrices = [];
-	// const historicalClosingPrices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-	// historicalClosingPrices.push(stockSpecificAPIData[2][0].close.toFixed(2) * 1);
+	// const historicalClosingPrices = [];
+	const historicalClosingPrices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+	// historicalClosingPrices.push(dailyClosingPrices[0].close.toFixed(2) * 1);
 	// historicalClosingPrices.push(stockSpecificAPIData[1].close.toFixed(2) * 1);
 	// historicalClosingPrices.push(stockSpecificAPIData[2].close.toFixed(2) * 1);
 	// historicalClosingPrices.push(stockSpecificAPIData[3].close.toFixed(2) * 1);
@@ -43,9 +47,7 @@ const PriceChart = props => {
 
 	return (
 		<div>
-			{stockSpecificAPIData.length &&
-			stockSpecificAPIData[2].length &&
-			stockSpecificAPIData[2][0].length ? (
+			{dailyClosingPrices.length ? (
 				<div id="line-chart">
 					<Line // Per documentation you are supposed to have a key value pair here such as type: 'bar'; However, because we imported { Bar }  in code above from the 'react-chartjs-2' library we only need to create the <Bar Component here and close it at the end after we input all the lines of code between it. This is how it works with React.
 						data={{
