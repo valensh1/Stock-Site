@@ -270,16 +270,18 @@ body, html {
   // STOCK SPECIFIC DATA PAGE / SHOW PAGE
   #stock-news-container {
     position: relative;
+    height: 100%;
+    width: 100%;
     #stock-specific-data-container {
       position: relative;
-      height: 100vh;
+      height: 60vh;
       width: 100vw;
 
       // HEADER SECTION
         #stock-specific-company-heading {
           position: absolute;
           text-align: center;
-          border-bottom: 2.5px solid blue;
+          border-bottom: 2.5px solid lightgray;
           height: 20vh;
           width: 100vw;
 
@@ -339,16 +341,17 @@ body, html {
       flex-direction: row;
       justify-content: space-around;
       // border: 2px solid green;
-      width: 30%;
-      left: 5%;
+      width: 25%;
+      left: 0%;
         #stock-specific-company-data{
-          margin-left: 25%;
+          margin-left: 0%;
         }
         h2, h4 {
-          margin-top: 1%;
+          margin-top: 13%;
           padding-top: 0%;
           font-size: .7vw;
           text-align: right;
+          border-bottom: 1px solid lightgray;
         }
     }
 
@@ -359,32 +362,38 @@ body, html {
       justify-content: space-around;
       // border: 2px solid red;
       width: 30%;
-      right: 10%;
-        #stock-specific-ratios-valuation {
-          margin-right: 50%;
-        }
+      right: 0%;
         h2, h4 {
           font-size: .7vw;
+          margin-top: 15%;
+          border-bottom: 1px solid lightgray;
         }
     }
 
     #stock-specific-other-info {
       position: absolute;
-      top: 10vh;
-      right: 26vw;
+      top: 25vh;
+      right: 9vw;
         h4 {
-      font-size: .6vw;
+      font-size: .7vw;
+      border: 3px solid lightgray;
         }
     }
-
+#line-graph-container {
+  position: relative;
+  display: inline-block;
+  height: 47vh;
+  width: 47vw;
+  left:26vw;
+  top: -38vh;
+  border: 1px solid black;
       #line-chart {
-        position: relative;
-        bottom: 80vh;
-        left: 35vw;
-        width: 25vw;
-        height: 31vh;
-         
+        position: absolute;
+        height: 47vh;
+        width: 45vw;
+       
       }
+    }
   }
 
   #company-data-header {
@@ -403,7 +412,32 @@ body, html {
     text-decoration: underline;
   }
 
+// Stock Specific Articles
+#stock-specific-articles-container {
+  position: relative;
+  left: 32.5vw;
+  display: flex;
+  flex-direction: column;
+  top: -32%;
+  #stock-specific-articles-content {
+    margin-bottom: 3%;
+  }
+  h6{
+    color: lightgray;
+    font-size: .43vw;
+  }
+  h3 {
+    font-size: .8vw;
+  }
+  p {
+    font-size: .6vw;
+  }
+  img {
+    width: 35vw;
+    height: 35vh;
 
+  }
+}
 
 
 

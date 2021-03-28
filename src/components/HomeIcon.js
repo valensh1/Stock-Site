@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const HomeIcon = () => {
 	return (
-		<div>
+		<div id="home-icon">
 			<Link to={`/`}>
 				<i className="huge teal home icon"></i>
 			</Link>

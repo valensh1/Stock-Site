@@ -1,6 +1,4 @@
-import { color } from 'd3-color';
 import React from 'react';
-import StockNews from '../pages/StockNews';
 
 const StockSpecificData = props => {
 	console.log(props);
