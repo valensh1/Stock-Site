@@ -1,10 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import BackButton from '../components/BackButton';
 
 const About = () => {
 	return (
-		<div>
+		<div id="about-page-container">
+			<Link to={'/'}>
+				<BackButton />
+			</Link>
 			<div class="container">
-				<h2>Carousel Example</h2>
+				<h2 id="about-header">About Us</h2>
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 					{/* <!-- Indicators --> */}
 					<ol class="carousel-indicators">
@@ -13,7 +18,7 @@ const About = () => {
 						<li data-target="#myCarousel" data-slide-to="2"></li>
 					</ol>
 
-					{/* <!-- Wrapper for slides --> */}
+					{/* <!-- Wrapper for slides - BOOTSTRAP CAROUSEL W3SCHOOLS --> */}
 					<div class="carousel-inner">
 						<div class="item active">
 							<img
@@ -21,6 +26,10 @@ const About = () => {
 								alt="Los Angeles"
 								style={{ width: '100%' }}
 							/>
+							<div class="carousel-caption">
+								<h3>Chicago</h3>
+								<p>Thank you, Chicago!</p>
+							</div>
 						</div>
 
 						<div class="item">
@@ -29,6 +38,10 @@ const About = () => {
 								alt="Chicago"
 								style={{ width: '100%' }}
 							/>
+							<div class="carousel-caption">
+								<h3>Chicago</h3>
+								<p>Thank you, Chicago!</p>
+							</div>
 						</div>
 
 						<div class="item">
@@ -37,6 +50,10 @@ const About = () => {
 								alt="New york"
 								style={{ width: '100%' }}
 							/>
+							<div class="carousel-caption">
+								<h3>Chicago</h3>
+								<p>Thank you, Chicago!</p>
+							</div>
 						</div>
 					</div>
 

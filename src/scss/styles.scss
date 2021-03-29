@@ -33,7 +33,7 @@ body, html {
 
 
 
-
+//----------------------------------HOME PAGE--------------------------------------------------------------------
 // HEADER CONTAINER THAT WRAPS WHOLE HEADER SECTION OF WEBSITE
 .header-container {
   position: relative;
@@ -146,6 +146,9 @@ body, html {
       justify-content: space-evenly;
       align-items: center;
       margin-top: 2.7%;
+          #our-team {
+            color: white;
+          }
           .social-media-icons {
               position: absolute;
               bottom: 0%;
@@ -166,11 +169,65 @@ body, html {
           }
     }
 
+//-------------------------------------------ABOUT PAGE---------------------------------------------------------------------
+#about-page-container {
+  position: relative;
+  top: 7vh;
+  #about-header {
+    font-size: 3vw;
+    text-align: center;
+  }
+}
+
+.about-page-button {
+  position: absolute;
+  top: -5vh;
+  left: 3vw;
+
+}
+
+
+// -------------------------------------WATCHLIST PAGE STYLING----------------------------------------------------------
+#watchlist-wrapper{
+  position: relative;
+}
+
+#stock-search-bar {
+  position: relative;
+  top: 2vh;
+}
 #bull-logo {
   position: absolute;
   height: 5vh;
-  width: 5vw;
-  left: 35%;
+  width: 4.5vw;
+  left: 39vw;
+  top: 7.1vh;
+}
+
+.amazon-add {
+  position: relative;
+  top: 20vh;
+  width: 20vw;
+  height: -20vh;
+  right: 20vw;
+  img {
+    position: relative;
+    right: -95vw;
+    height: 20vh;
+    width: 15vw;
+  }
+}
+
+#general-indices-chart {
+  position: absolute;
+  top: 10vh;
+  width: 25vw;
+  left: 8vw;
+#st_6e331a4ef8a644eb807e5a76e42ef670 {
+  position: relative;
+  height: 39vh;
+  width: 20vw;
+}
 }
 
 // Date Picker on Watchlist Page
@@ -196,7 +253,9 @@ body, html {
 // Overall watchlist container which INCLUDES the search bar and watchlist
 .watchlist-overallContainer {
         position: relative;
+        top: -20vh;  // ADJUST HERE TO MOVE WATCHLIST UP OR DOWN----> NEGATIVE NUMBER MOVES IT HIGHER UP
         width: 25%;
+        height: 100%;
         left: 40%;
   // Watchlist container which EXCLUDES the search bar. It only includes the actual watchlist section with the headers for the watchlist
   .watchlist-xSearchbar-container {
@@ -224,6 +283,7 @@ body, html {
     }
 
 // Actual watchlist with ticker symbols container (DOES NOT INCLUDE HEADERS). Wraps around all symbols in the listing.
+
 .stock-list-container {
   display: flex;
   flex-direction: column;

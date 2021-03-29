@@ -1,5 +1,6 @@
 import React from 'react';
 import PhoneIcon from './Icons/PhoneIcon';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 const Footer = () => {
 	return (
@@ -25,7 +26,9 @@ const Footer = () => {
 					<h4>Investors</h4>
 				</div>
 				<div className="footer-item">
-					<h4>Our Team</h4>
+					<a href={'/about'}>
+						<h4 id="our-team">Our Team</h4>
+					</a>
 				</div>
 				<div className="footer-item">
 					<h4>Contact Us</h4>
