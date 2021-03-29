@@ -204,7 +204,7 @@ body, html {
   position: absolute;
   height: 4vh;
   width: 4vw;
-  left: 39vw;
+  left: 36.5vw;
   top: 10vh;
 }
 
@@ -275,9 +275,9 @@ body, html {
 .watchlist-overallContainer {
         position: relative;
         top: -20vh;  // ADJUST HERE TO MOVE WATCHLIST UP OR DOWN----> NEGATIVE NUMBER MOVES IT HIGHER UP
-        width: 25%;
+        width: 30%;
         height: 100%;
-        left: 40%;
+        left: 37%;
   // Watchlist container which EXCLUDES the search bar. It only includes the actual watchlist section with the headers for the watchlist
   .watchlist-xSearchbar-container {
             display: flex;
@@ -293,14 +293,20 @@ body, html {
             justify-content: space-between;
         #last-price-header{
             position: absolute;
-            left: 50%;
+            left: 30%;
             color: black;
-            font-size: .5vw;
+            font-size: .7vw;
         }
         #symbol-header {
             margin-left: 2%;
             color: black;
-            font-size: .5vw;
+            font-size: .7vw;
+        }
+        #last-price-change {
+          position: relative;
+          left: -30%;
+          color: black;
+          font-size: .7vw;
         }
       }
     }
@@ -312,7 +318,7 @@ body, html {
   flex-direction: column;
   position: relative;
   color:white;
-  background-color: teal;
+  background-color: #8AAACB;
   border: 5px solid red;
   height: fit-content;
   .stock-symbol-container {
@@ -335,6 +341,7 @@ body, html {
       margin-left: -25%;
       
     }
+
     }
     .symbol {
       margin-left: 2%;
@@ -342,11 +349,21 @@ body, html {
      
     }
     .last-price {
-      left: 75%;
+      left: 55%;
       font-size: 1vw;
       font-style: oblique;
-      
     }
+
+    #price-change {  // Price change column on watchlist
+      position: relative;
+      left: 58%;
+      display: inline;
+      position: absolute;
+      font-weight: 900;
+      margin-right: 1.5vw;
+      margin-left: 1.5vw;
+    }
+
     #trash-can {
       cursor: pointer;
     }

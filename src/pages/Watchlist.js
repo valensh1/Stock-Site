@@ -313,6 +313,7 @@ Need to put this before the setDBWatchList since it has a race condition and als
 					<div className="watchlist-headers">
 						<h6 id="symbol-header">Symbol</h6>
 						<h6 id="last-price-header">Last Price</h6>
+						<h6 id="last-price-change">$ Change</h6>
 					</div>
 					<div className="stock-list-container">
 						{DBWatchList.map((stock, index) => {
@@ -328,6 +329,17 @@ Need to put this before the setDBWatchList since it has a race condition and als
 										<h4 className="symbol">{stock.symbol}</h4>
 										<h4 className="last-price" id="lastPrice">
 											${APIData[index].price.toFixed(2) * 1}
+										</h4>
+										<h4
+											className="price-change"
+											id="price-change"
+											style={
+												APIData[index].change.toFixed(2) * 1 > 0
+													? { color: 'green' }
+													: { color: 'red' }
+											}
+										>
+											${APIData[index].change.toFixed(2) * 1}
 										</h4>
 									</Link>
 									<DeleteSymbol
