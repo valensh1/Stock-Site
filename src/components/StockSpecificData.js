@@ -39,7 +39,9 @@ const StockSpecificData = props => {
 								{stockSpecificAPIData[1].changesPercentage}%
 							</h4>
 						</div>
-						<img src={stockSpecificAPIData[0].image}></img>
+						<a href={stockSpecificAPIData[0].website} target="_blank">
+							<img src={stockSpecificAPIData[0].image}></img>
+						</a>
 					</div>
 					<div id="stock-specific-nonheading-section">
 						<div id="data-leftside-chart">
@@ -56,22 +58,41 @@ const StockSpecificData = props => {
 								id="stock-specific-price-info"
 							>
 								<h2 id="price-header">Price Data</h2>
-								<h4>Last Price: ${stockSpecificAPIData[1].price}</h4>
-								<h4>Price Change: ${stockSpecificAPIData[1].change}</h4>
-								<h4>% Change: {stockSpecificAPIData[1].changesPercentage}%</h4>
-								<h4>Day High Price: ${stockSpecificAPIData[1].dayHigh}</h4>
-								<h4>Day Low Price: ${stockSpecificAPIData[1].dayLow}</h4>
 								<h4>
-									52 Week Range:{' '}
-									{`$${stockSpecificAPIData[1].yearHigh}-$${stockSpecificAPIData[1].yearLow}`}
+									Last Price: <span>${stockSpecificAPIData[1].price}</span>
 								</h4>
 								<h4>
-									50 Day Moving Average: $
-									{stockSpecificAPIData[1].priceAvg50.toFixed(2) * 1}
+									Price Change: <span>${stockSpecificAPIData[1].change}</span>
+								</h4>
+								<h4>
+									% Change:{' '}
+									<span>{stockSpecificAPIData[1].changesPercentage}%</span>
+								</h4>
+								<h4>
+									Day High Price:{' '}
+									<span>${stockSpecificAPIData[1].dayHigh}</span>
+								</h4>
+								<h4>
+									Day Low Price: <span>${stockSpecificAPIData[1].dayLow}</span>
+								</h4>
+								<h4>
+									52 Week Range:
+									<span>
+										{`$${stockSpecificAPIData[1].yearHigh}-$${stockSpecificAPIData[1].yearLow}`}
+									</span>
+								</h4>
+								<h4>
+									50 Day Moving Average:
+									<span>
+										{' '}
+										${stockSpecificAPIData[1].priceAvg50.toFixed(2) * 1}
+									</span>
 								</h4>
 								<h4>
 									200 Day Moving Average: $
-									{stockSpecificAPIData[1].priceAvg200.toFixed(2) * 1}
+									<span>
+										{stockSpecificAPIData[1].priceAvg200.toFixed(2) * 1}
+									</span>
 								</h4>
 							</div>
 						</div>

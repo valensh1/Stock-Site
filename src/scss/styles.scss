@@ -146,6 +146,9 @@ body, html {
       justify-content: space-evenly;
       align-items: center;
       margin-top: 2.7%;
+      h4{
+        color: white;
+      }
           #our-team {
             color: white;
           }
@@ -330,7 +333,8 @@ body, html {
 }
   }
 
-  // STOCK SPECIFIC DATA PAGE / SHOW PAGE
+  // -----------------------------STOCK SPECIFIC DATA PAGE / SHOW PAGE--------------------------------------
+
   #stock-news-container {
     position: relative;
     height: 100%;
@@ -339,6 +343,7 @@ body, html {
       position: relative;
       height: 60vh;
       width: 100vw;
+     
 
       // HEADER SECTION
         #stock-specific-company-heading {
@@ -413,9 +418,12 @@ body, html {
         h2, h4 {
           margin-top: 13%;
           padding-top: 0%;
-          font-size: .7vw;
+          font-size: .6vw;
           text-align: right;
           border-bottom: 1px solid lightgray;
+        }
+        span {
+          // margin-left: 5%;
         }
     }
 
@@ -429,7 +437,7 @@ body, html {
       width: 30%;
       right: 0%;
         h2, h4 {
-          font-size: .7vw;
+          font-size: .6vw;
           margin-top: 15%;
           border-bottom: 1.8px solid lightgray;
         }

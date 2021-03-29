@@ -13,7 +13,6 @@ const Watchlist = () => {
 	const [APIData, setAPIData] = useState([]);
 	const [refreshedList, setRefreshedList] = useState('false');
 	let typedSymbol = '';
-	const APIKey = '';
 
 	// This useEffect is run immediately upon initial rendering of screen; Immediately Invoked Function Expression needed when use the async function with useEffect hook which is the parenthesis before async and the opening and closing parenthesis () at end.
 	useEffect(() => {
@@ -50,6 +49,10 @@ const Watchlist = () => {
 				});
 				stockListing = stockListing.join(); // Take the StockListing array of symbols that were pushed from our database (they are all capitalized) and use join method to get them out of the array and into a batch format to send with API request (format such as FB,AAPL,AMZN,NFLX,GOOGL)
 				console.log(stockListing); // Verification of what stockListing variable looks like prior to send for API call
+
+				const APICall4Key = await fetch('/api/stocks/key'); // API Call to backend to retrieve API Key we want hidden from public view on Github
+				const APIKeyData = await APICall4Key.json(); // API data sent from backend with our key.
+				const APIKey = APIKeyData.key; // API Key
 
 				// Making the API request to Financial Modeling Prep to retrieve information about ticker symbols retrieved from our database that are on our watchlist.
 				const thirdPartyAPIresponse = await fetch(
@@ -105,6 +108,10 @@ Immediately Invoked Function Expression needed when use the async function with 
 				});
 				stockListing = stockListing.join(); // Take the StockListing array of symbols that were pushed from our database (they are all capitalized) and use join method to get them out of the array and into a batch format to send with API request (format such as FB,AAPL,AMZN,NFLX,GOOGL)
 				console.log(stockListing); // Verification of what stockListing variable looks like prior to send for API call
+
+				const APICall4Key = await fetch('/api/stocks/key'); // API Call to backend to retrieve API Key we want hidden from public view on Github
+				const APIKeyData = await APICall4Key.json(); // API data sent from backend with our key.
+				const APIKey = APIKeyData.key; // API Key
 
 				// Making the API request to Financial Modeling Prep to retrieve information about ticker symbols retrieved from our database that are on our watchlist. Main reason we are doing this is because we have to capture the new ticker symbol that was added.
 				const thirdPartyAPIresponse = await fetch(
@@ -181,6 +188,10 @@ Immediately Invoked Function Expression needed when use the async function with 
 			stockListing = stockListing.join(); // Take the StockListing array of symbols that were pushed from our database (they are all capitalized) and use join method to get them out of the array and into a batch format to send with API request (format such as FB,AAPL,AMZN,NFLX,GOOGL)
 			console.log(stockListing); // Verification of what stockListing variable looks like prior to send for API call
 
+			const APICall4Key = await fetch('/api/stocks/key'); // API Call to backend to retrieve API Key we want hidden from public view on Github
+			const APIKeyData = await APICall4Key.json(); // API data sent from backend with our key.
+			const APIKey = APIKeyData.key; // API Key
+
 			// Making the API request to Financial Modeling Prep to retrieve information about ticker symbols retrieved from our database that are on our watchlist. Main reason we are doing this is because we have to capture the new ticker symbol that was added.
 			const thirdPartyAPIresponse = await fetch(
 				`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=${APIKey}`
@@ -230,6 +241,10 @@ Immediately Invoked Function Expression needed when use the async function with 
 			});
 			stockListing = stockListing.join(); // Take the StockListing array of symbols that were pushed from our database (they are all capitalized) and use join method to get them out of the array and into a batch format to send with API request (format such as FB,AAPL,AMZN,NFLX,GOOGL)
 			console.log(stockListing); // Verification of what stockListing variable looks like prior to send for API call
+
+			const APICall4Key = await fetch('/api/stocks/key'); // API Call to backend to retrieve API Key we want hidden from public view on Github
+			const APIKeyData = await APICall4Key.json(); // API data sent from backend with our key.
+			const APIKey = APIKeyData.key; // API Key
 
 			// Making the API request to Financial Modeling Prep to retrieve information about ticker symbols retrieved from our database that are on our watchlist. Main reason we are doing this is because we have to capture the new ticker symbol that was added.
 			const thirdPartyAPIresponse = await fetch(

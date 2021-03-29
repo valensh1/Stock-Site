@@ -40,7 +40,9 @@ const Footer = () => {
 					<h4>Charts</h4>
 				</div>
 				<div className="footer-item">
-					<h4>Watchlists</h4>
+					<Link to={'/watchlist'}>
+						<h4>Watchlists</h4>
+					</Link>
 				</div>
 				<div className="footer-item">
 					<h4>Stock News</h4>

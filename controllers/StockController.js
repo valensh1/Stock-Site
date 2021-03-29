@@ -40,10 +40,10 @@ stockRouter.delete('/', async (req, res) => {
 });
 
 // API Key ROUTE
-stockRouter.get('/key', (req, res) => {
+stockRouter.get('/key', (req, res) => {  // Route that our frontend calls to our backend to retrieve our Financial Modeling Prep API Key to make API calls to that site for stock data
 	res
 	.status(200)
-	.json({key: Financial_Modeling_API})
+	.json({key: Financial_Modeling_API})  // Financial_Modeling_API is stored in env file which does not get uploaded to GitHub for privacy purposes.
 });
 
 // SHOW ROUTE
