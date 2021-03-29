@@ -254,6 +254,23 @@ body, html {
         }
   }
 
+  .invalid-entry-message {
+    position: relative;
+    left: 22vw;
+    font-size: 1vw;
+    font-style: italic;
+    color: red;
+    visibility: visible;
+  }
+
+  .invalid-entry-hidden {
+    position: relative;
+    left: 22vw;
+    font-size: 1vw;
+    font-style: italic;
+    visibility: hidden;
+  }
+
 // Overall watchlist container which INCLUDES the search bar and watchlist
 .watchlist-overallContainer {
         position: relative;
