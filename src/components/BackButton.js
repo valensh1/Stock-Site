@@ -5,7 +5,7 @@ const BackButton = () => {
 		<div>
 			<button
 				type="button"
-				className="btn btn-primary btn-lg about-page-button"
+				className="btn btn-primary btn-lg about-page-button stock-news-back-button"
 			>
 				BACK
 			</button>

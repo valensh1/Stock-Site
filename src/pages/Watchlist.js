@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Used axios to make a POST request to database to add a new ticker symbol. To install axios just go to Terminal and type in npm i axios.
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import HomeIcon from '../components/HomeIcon'; // This is to import the home icon Component so user can click on this and go back to Home Page.
+import HomeIcon from '../components/Icons/HomeIcon'; // This is to import the home icon Component so user can click on this and go back to Home Page.
 import AddSymbol from '../components/AddSymbol'; // This is to import the search bar Component which allows user add a new stock to their watchlist.
 import { DeleteSymbol } from '../components/DeleteSymbol'; // This is to import the trash can icon so user can delete a symbol from their watchlist.
 import MarketIndicesChart from '../components/MarketIndicesChart';
 import MarketScrollbar from '../components/MarketScrollbar';
 import Ad1 from '../components/Icons/Ad1';
+import BackButton from '../components/BackButton';
 
 const Watchlist = () => {
 	const [DBWatchList, setDBWatchList] = useState([]);
@@ -270,6 +271,9 @@ Need to put this before the setDBWatchList since it has a race condition and als
 	return (
 		<div id="watchlist-wrapper">
 			<HomeIcon />
+			<Link to={'/'}>
+				<BackButton />
+			</Link>
 			<MarketScrollbar />
 			<MarketIndicesChart />
 			<Ad1 />

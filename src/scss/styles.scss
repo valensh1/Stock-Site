@@ -172,6 +172,7 @@ body, html {
           }
     }
 
+
 //-------------------------------------------ABOUT PAGE---------------------------------------------------------------------
 #about-page-container {
   position: relative;
@@ -201,10 +202,10 @@ body, html {
 }
 #bull-logo {
   position: absolute;
-  height: 5vh;
-  width: 4.5vw;
+  height: 4vh;
+  width: 4vw;
   left: 39vw;
-  top: 7.1vh;
+  top: 10vh;
 }
 
 .amazon-add {
@@ -249,7 +250,7 @@ body, html {
       width: 25%;
         #symbol-search {
          width: 15vw;
-         font-size: 1.3vw;
+         font-size: .8vw;
         }
   }
 
@@ -277,10 +278,12 @@ body, html {
             position: absolute;
             left: 50%;
             color: black;
+            font-size: .5vw;
         }
         #symbol-header {
             margin-left: 2%;
             color: black;
+            font-size: .5vw;
         }
       }
     }
@@ -318,12 +321,13 @@ body, html {
     }
     .symbol {
       margin-left: 2%;
-      font-size: 1.3vw;
+      font-size: 1vw;
      
     }
     .last-price {
       left: 75%;
-      font-size: 1.3vw;
+      font-size: 1vw;
+      font-style: oblique;
       
     }
     #trash-can {
@@ -333,7 +337,17 @@ body, html {
 }
   }
 
-  // -----------------------------STOCK SPECIFIC DATA PAGE / SHOW PAGE--------------------------------------
+  // -----------------------------STOCK SPECIFIC DATA PAGE / SHOW-STOCK NEWS PAGE/ ----------------------------------------
+.stock-news-back-button {
+  position: relative;
+  top: -2.5vh;
+  left: 1vw;
+  margin-left: 2vw;
+  width: fit-content;
+  height: fit-content;
+ 
+
+}
 
   #stock-news-container {
     position: relative;

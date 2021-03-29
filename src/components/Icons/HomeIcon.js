@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const HomeIcon = () => {
 	return (
-		<div id="home-icon">
+		<div id="home-icon-container">
 			<Link to={`/`}>
-				<i className="huge teal home icon"></i>
+				<i id="home-icon" className="huge teal home icon"></i>
 			</Link>
 		</div>
 	);
