@@ -156,56 +156,122 @@ Immediately Invoked Function Expression needed when use the async function with 
 	// Purpose of this function is once user submits form and user input of ticker symbol is prepared and converted into a Javascript object that matches our MongoDb schema this function is invoked to send the relevant data to our MongoDB database for storage.
 	const sendToDB = async newSymbol => {
 		try {
-			let response = await axios.post('api/stocks', newSymbol); // Sending of user ticker symbol to MongoDB database for posting/creation of a new ticker symbol into our database for storage.
-			response = await fetch('/api/stocks'); // Fetches stock symbols from our database; Makes a call to our back-end controller which then sends us the data from our MongoDB database to our React front-end
-			const data = await response.json(); // Awaiting the response of data retrieval from our database and then taking the returned json object and converting it to a Javascript object by using the .json() method. No lines of code will run after this until this process is complete (await keyword causes other lines of code to wait)
-			let dataToSort = await data; // Creation of a new variable dataToSort so we can sort data
-
-			// Loop/Map through our database listing and convert all ticker symbols to lowercase letters so they are sorted properly. Uppercase letters would be sorted differently such as Ab might not be placed next to ab because capital and lowercase are sorted differently.
-			dataToSort.map(stock => {
-				stock.symbol = stock.symbol.toLowerCase(); // Conversion of database list of our stocks to lowercase so sort works properly. As mentioned in comment directly above sorting behaves differently between capital and lowercase letters so therefore if you ensure all items are lowercased you ensure sorting as you would expect.
-			});
-
-			// code to sort list
-			let sortedList = dataToSort.sort((a, b) => {
-				let tickerA = a.symbol;
-				let tickerB = b.symbol;
-				if (tickerA < tickerB) {
-					return -1;
-				}
-				if (tickerA > tickerB) {
-					return 1;
-				}
-				return 0;
-			});
-			console.log(sortedList); // Verification of sorted list
-
-			let stockListing = []; // Emtpy array to push stock symbols into for modification to ultimately get into a format to feed to the Financial Modeling Prep API for retrieval of stock information. Needs to be in a format such as FB,AAPL,AMZN,NFLX,GOOGL along with API keys etc.
-
-			// Loop/Map through our database listing and convert all ticker symbols to uppercase letters so they are sorted properly. Uppercase letters would be sorted differently such as Ab might not be placed next to ab because capital and lowercase are sorted differently.
-			sortedList.map(stock => {
-				stockListing.push(stock.symbol.toUpperCase());
-			});
-			stockListing = stockListing.join(); // Take the StockListing array of symbols that were pushed from our database (they are all capitalized) and use join method to get them out of the array and into a batch format to send with API request (format such as FB,AAPL,AMZN,NFLX,GOOGL)
-			console.log(stockListing); // Verification of what stockListing variable looks like prior to send for API call
-
 			const APICall4Key = await fetch('/api/stocks/key'); // API Call to backend to retrieve API Key we want hidden from public view on Github
 			const APIKeyData = await APICall4Key.json(); // API data sent from backend with our key.
 			const APIKey = APIKeyData.key; // API Key
 
 			// Making the API request to Financial Modeling Prep to retrieve information about ticker symbols retrieved from our database that are on our watchlist. Main reason we are doing this is because we have to capture the new ticker symbol that was added.
-			const thirdPartyAPIresponse = await fetch(
-				`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=${APIKey}`
+			const APIValidStockFetch = await fetch(
+				`https://financialmodelingprep.com/api/v3/quote/${newSymbol.symbol.toUpperCase()}?apikey=${APIKey}`
 			);
-			const dataThirdParty = await thirdPartyAPIresponse.json(); // Awaiting the response from Financial Modeling Prep API and converting the json object sent back into a Javascript object through use of the .json() method so that we can use this to get data from about our stocks.
-			console.log(dataThirdParty); // Verification of data sent back from the Financial Modeling Prep API
-			await setAPIData(dataThirdParty); // Setting state of API data received back; Needed to insert this first because this took longer to process and if we didn't place this first we would have a race issue which was causing a render issue where there wasn't any data and it was returning my JSX below as undefined. By placing this first and awaiting this it waits till API data is set before going to next line of code which is setting our new Watchlist state for our database.
-			setDBWatchList(sortedList); // Setting of state for the ticker symbols in our watchlist which is the symbols we retrieve straight from our MongoDB database. This is the main state which causes our list to re-render with the relevant information because everything is dependent on this list being set before we can fetch API calls for the ticker symbols in that list.
+			const dataAPIValidStockFetch = await APIValidStockFetch.json(); // Awaiting the response from Financial Modeling Prep API and converting the json object sent back into a Javascript object through use of the .json() method so that we can use this to get data from about our stocks.
+			console.log(dataAPIValidStockFetch); // Verification of data sent back from the Financial Modeling Prep API
+
+			if (!dataAPIValidStockFetch.length) {
+				console.log('Invalid Ticker Symbol Entry By User');
+				return;
+			} else {
+				let response = await axios.post('api/stocks', newSymbol); // Sending of user ticker symbol to MongoDB database for posting/creation of a new ticker symbol into our database for storage.
+				response = await fetch('/api/stocks'); // Fetches stock symbols from our database; Makes a call to our back-end controller which then sends us the data from our MongoDB database to our React front-end
+				const data = await response.json(); // Awaiting the response of data retrieval from our database and then taking the returned json object and converting it to a Javascript object by using the .json() method. No lines of code will run after this until this process is complete (await keyword causes other lines of code to wait)
+				let dataToSort = await data; // Creation of a new variable dataToSort so we can sort data
+
+				// Loop/Map through our database listing and convert all ticker symbols to lowercase letters so they are sorted properly. Uppercase letters would be sorted differently such as Ab might not be placed next to ab because capital and lowercase are sorted differently.
+				dataToSort.map(stock => {
+					stock.symbol = stock.symbol.toLowerCase(); // Conversion of database list of our stocks to lowercase so sort works properly. As mentioned in comment directly above sorting behaves differently between capital and lowercase letters so therefore if you ensure all items are lowercased you ensure sorting as you would expect.
+				});
+
+				// code to sort list
+				let sortedList = dataToSort.sort((a, b) => {
+					let tickerA = a.symbol;
+					let tickerB = b.symbol;
+					if (tickerA < tickerB) {
+						return -1;
+					}
+					if (tickerA > tickerB) {
+						return 1;
+					}
+					return 0;
+				});
+				console.log(sortedList); // Verification of sorted list
+
+				let stockListing = []; // Emtpy array to push stock symbols into for modification to ultimately get into a format to feed to the Financial Modeling Prep API for retrieval of stock information. Needs to be in a format such as FB,AAPL,AMZN,NFLX,GOOGL along with API keys etc.
+
+				// Loop/Map through our database listing and convert all ticker symbols to uppercase letters so they are sorted properly. Uppercase letters would be sorted differently such as Ab might not be placed next to ab because capital and lowercase are sorted differently.
+				sortedList.map(stock => {
+					stockListing.push(stock.symbol.toUpperCase());
+				});
+				stockListing = stockListing.join(); // Take the StockListing array of symbols that were pushed from our database (they are all capitalized) and use join method to get them out of the array and into a batch format to send with API request (format such as FB,AAPL,AMZN,NFLX,GOOGL)
+				console.log(stockListing); // Verification of what stockListing variable looks like prior to send for API call
+
+				// Making the API request to Financial Modeling Prep to retrieve information about ticker symbols retrieved from our database that are on our watchlist. Main reason we are doing this is because we have to capture the new ticker symbol that was added.
+				const thirdPartyAPIresponse = await fetch(
+					`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=${APIKey}`
+				);
+				const dataThirdParty = await thirdPartyAPIresponse.json(); // Awaiting the response from Financial Modeling Prep API and converting the json object sent back into a Javascript object through use of the .json() method so that we can use this to get data from about our stocks.
+				console.log(dataThirdParty); // Verification of data sent back from the Financial Modeling Prep API
+				await setAPIData(dataThirdParty); // Setting state of API data received back; Needed to insert this first because this took longer to process and if we didn't place this first we would have a race issue which was causing a render issue where there wasn't any data and it was returning my JSX below as undefined. By placing this first and awaiting this it waits till API data is set before going to next line of code which is setting our new Watchlist state for our database.
+				setDBWatchList(sortedList); // Setting of state for the ticker symbols in our watchlist which is the symbols we retrieve straight from our MongoDB database. This is the main state which causes our list to re-render with the relevant information because everything is dependent on this list being set before we can fetch API calls for the ticker symbols in that list.
+			}
 		} catch (error) {
 			// If an error is caught in this process log the error message to user
 			console.error(error);
 		}
 	};
+
+	// // Purpose of this function is once user submits form and user input of ticker symbol is prepared and converted into a Javascript object that matches our MongoDb schema this function is invoked to send the relevant data to our MongoDB database for storage.
+	// const sendToDB = async newSymbol => {
+	// 	try {
+	// 		let response = await axios.post('api/stocks', newSymbol); // Sending of user ticker symbol to MongoDB database for posting/creation of a new ticker symbol into our database for storage.
+	// 		response = await fetch('/api/stocks'); // Fetches stock symbols from our database; Makes a call to our back-end controller which then sends us the data from our MongoDB database to our React front-end
+	// 		const data = await response.json(); // Awaiting the response of data retrieval from our database and then taking the returned json object and converting it to a Javascript object by using the .json() method. No lines of code will run after this until this process is complete (await keyword causes other lines of code to wait)
+	// 		let dataToSort = await data; // Creation of a new variable dataToSort so we can sort data
+
+	// 		// Loop/Map through our database listing and convert all ticker symbols to lowercase letters so they are sorted properly. Uppercase letters would be sorted differently such as Ab might not be placed next to ab because capital and lowercase are sorted differently.
+	// 		dataToSort.map(stock => {
+	// 			stock.symbol = stock.symbol.toLowerCase(); // Conversion of database list of our stocks to lowercase so sort works properly. As mentioned in comment directly above sorting behaves differently between capital and lowercase letters so therefore if you ensure all items are lowercased you ensure sorting as you would expect.
+	// 		});
+
+	// 		// code to sort list
+	// 		let sortedList = dataToSort.sort((a, b) => {
+	// 			let tickerA = a.symbol;
+	// 			let tickerB = b.symbol;
+	// 			if (tickerA < tickerB) {
+	// 				return -1;
+	// 			}
+	// 			if (tickerA > tickerB) {
+	// 				return 1;
+	// 			}
+	// 			return 0;
+	// 		});
+	// 		console.log(sortedList); // Verification of sorted list
+
+	// 		let stockListing = []; // Emtpy array to push stock symbols into for modification to ultimately get into a format to feed to the Financial Modeling Prep API for retrieval of stock information. Needs to be in a format such as FB,AAPL,AMZN,NFLX,GOOGL along with API keys etc.
+
+	// 		// Loop/Map through our database listing and convert all ticker symbols to uppercase letters so they are sorted properly. Uppercase letters would be sorted differently such as Ab might not be placed next to ab because capital and lowercase are sorted differently.
+	// 		sortedList.map(stock => {
+	// 			stockListing.push(stock.symbol.toUpperCase());
+	// 		});
+	// 		stockListing = stockListing.join(); // Take the StockListing array of symbols that were pushed from our database (they are all capitalized) and use join method to get them out of the array and into a batch format to send with API request (format such as FB,AAPL,AMZN,NFLX,GOOGL)
+	// 		console.log(stockListing); // Verification of what stockListing variable looks like prior to send for API call
+
+	// 		const APICall4Key = await fetch('/api/stocks/key'); // API Call to backend to retrieve API Key we want hidden from public view on Github
+	// 		const APIKeyData = await APICall4Key.json(); // API data sent from backend with our key.
+	// 		const APIKey = APIKeyData.key; // API Key
+
+	// 		// Making the API request to Financial Modeling Prep to retrieve information about ticker symbols retrieved from our database that are on our watchlist. Main reason we are doing this is because we have to capture the new ticker symbol that was added.
+	// 		const thirdPartyAPIresponse = await fetch(
+	// 			`https://financialmodelingprep.com/api/v3/quote/${stockListing}?apikey=${APIKey}`
+	// 		);
+	// 		const dataThirdParty = await thirdPartyAPIresponse.json(); // Awaiting the response from Financial Modeling Prep API and converting the json object sent back into a Javascript object through use of the .json() method so that we can use this to get data from about our stocks.
+	// 		console.log(dataThirdParty); // Verification of data sent back from the Financial Modeling Prep API
+	// 		await setAPIData(dataThirdParty); // Setting state of API data received back; Needed to insert this first because this took longer to process and if we didn't place this first we would have a race issue which was causing a render issue where there wasn't any data and it was returning my JSX below as undefined. By placing this first and awaiting this it waits till API data is set before going to next line of code which is setting our new Watchlist state for our database.
+	// 		setDBWatchList(sortedList); // Setting of state for the ticker symbols in our watchlist which is the symbols we retrieve straight from our MongoDB database. This is the main state which causes our list to re-render with the relevant information because everything is dependent on this list being set before we can fetch API calls for the ticker symbols in that list.
+	// 	} catch (error) {
+	// 		// If an error is caught in this process log the error message to user
+	// 		console.error(error);
+	// 	}
+	// };
 
 	// Purpose of this method is to take the data passed in as argument from the DeleteSymbol Component (props.changeState(data2)) - changeState is the name given to the prop passed from below over to the DeleteSymbol Component. The DeleteSymbol component gets the listing of our ticker symbols in our database AFTER deletion and sends data back and passes that data ultimately back to this function
 	const changeStateAfterDelete = data => {
