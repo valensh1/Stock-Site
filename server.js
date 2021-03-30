@@ -1,5 +1,5 @@
 require('dotenv').config();
-const cors = require('cors'); // Must have this in server.js file
+// const cors = require('cors'); // Must have this in server.js file
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8000;
