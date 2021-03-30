@@ -125,7 +125,7 @@ body, html {
     // CONTAINER THAT WRAPS THE FEATURED ON SECTION OF THE HOME PAGE
     .featured-on-container{
         display: block;
-        height: 15vh;
+        height: 19vh;
         margin-top: 1.5%;
             #featured-on-image{   // Image containing all the companies that featured in such as CNBC, Wall St Journal, etc.
               position: absolute;
@@ -140,37 +140,41 @@ body, html {
       position: relative;
       background-color: black;
       width: 100vw;
-      height: 30vh;
+      height: 65vh;
+      margin-top: 3vh;
+      padding-top: 20vh;
       color: white;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      margin-top: 2.7%;
-      h4{
-        color: white;
-      }
-          #our-team {
+          h1,h2,h3,h4,h5,h6 {
+            font-size: 1vw;
             color: white;
           }
+          #bottom-navbar {
+            display: flex;
+            justify-content: space-around;
+            h4 {
+              font-size: 1.2vw;
+              margin-top: 1vh;
+            }
+            h1 {
+              font-size: 1.7vw;
+            }
+          }
           .social-media-icons {
-              position: absolute;
-              bottom: 0%;
-              right: 0%;
-              i {
-                color: royalblue;
-              }
+            position: absolute;
+            right: 0vw;
+            bottom: 0vh;
+            font-size: 1vw;
           }
           .phone-icon {
             position: absolute;
-            display: flex;
-            bottom: 0%;
-            left: 2%;
-            width: 20vw;
-              #phone-number{
-                margin-left: 5%;
+            bottom: 0vh;
+            width: 15vw;
+              h2 {
+                font-size: 1.5vw;
               }
           }
-    }
+        }
+      
 
 
 //-------------------------------------------ABOUT PAGE---------------------------------------------------------------------
@@ -256,7 +260,8 @@ body, html {
 
   .invalid-entry-message {
     position: relative;
-    left: 22vw;
+    left: 21vw;
+    margin-left: 1.8vw;
     font-size: 1vw;
     font-style: italic;
     color: red;

@@ -1,5 +1,5 @@
 require('dotenv').config();
-// const cors = require('cors'); // Must have this in server.js file // NEED TO UNCOMMENT THIS IF DEPLOYMENT FAILS AGAIN
+// const cors = require('cors'); // Must have this in server.js file // ONLY NEED THIS IF HAVE FRONT-END AND BACK-END SEPARATELY AND THEY ARE DIFFERENT LANGUAGES LIKE JAVASCRIPT AND RUBY ON RAILS
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -22,7 +22,7 @@ app.use(express.json());
 if (process.env.NODE_ENV !== 'development'){
   app.use(express.static('public'))
 }
-// app.use(cors()); // Must have this on server.js file // NEED TO UNCOMMENT THIS IF DEPLOYMENT FAILS AGAIN
+// app.use(cors()); // Must have this on server.js file // ONLY NEED THIS IF HAVE FRONT-END AND BACK-END SEPARATELY AND THEY ARE DIFFERENT LANGUAGES LIKE JAVASCRIPT AND RUBY ON RAILS
 
 
 /* Controller Goes Here Remove the tes*/
