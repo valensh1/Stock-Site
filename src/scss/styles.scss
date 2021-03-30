@@ -152,25 +152,25 @@ body, html {
             display: flex;
             justify-content: space-around;
             h4 {
-              font-size: 1.2vw;
+              font-size: .8vw;
               margin-top: 1vh;
             }
             h1 {
-              font-size: 1.7vw;
+              font-size: 1.2vw;
             }
           }
           .social-media-icons {
             position: absolute;
             right: 0vw;
             bottom: 0vh;
-            font-size: 1vw;
+            font-size: .6vw;
           }
           .phone-icon {
             position: absolute;
             bottom: 0vh;
             width: 15vw;
               h2 {
-                font-size: 1.5vw;
+                font-size: 1vw;
               }
           }
         }
@@ -178,20 +178,61 @@ body, html {
 
 
 //-------------------------------------------ABOUT PAGE---------------------------------------------------------------------
-#about-page-container {
-  position: relative;
-  top: 7vh;
-  #about-header {
-    font-size: 3vw;
-    text-align: center;
-  }
+
+.column {
+  // float: left;
+  // width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
 }
 
-.about-page-button {
-  position: absolute;
-  top: -5vh;
-  left: 3vw;
+.card {
+  box-shadow: 0px 10px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
 
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor:pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: blue;
+}
+
+.about-pics {
+  width: 15vw;
+  height: 23vh;
+}
+
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
 }
 
 
