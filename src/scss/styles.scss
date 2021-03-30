@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Asset&display=swap');  // Font for ATWS logo; Also need to make it italic down in CSS
 
 body {
   position: relative;
@@ -152,18 +152,18 @@ body, html {
             display: flex;
             justify-content: space-around;
             h4 {
-              font-size: .8vw;
+              font-size: 1vw;
               margin-top: 1vh;
             }
             h1 {
-              font-size: 1.2vw;
+              font-size: 1.4vw;
             }
           }
           .social-media-icons {
             position: absolute;
             right: 0vw;
             bottom: 0vh;
-            font-size: .6vw;
+            font-size: .8vw;
           }
           .phone-icon {
             position: absolute;
@@ -175,6 +175,53 @@ body, html {
           }
         }
       
+
+//-------------------------------------------NAVIGATION BAR----------------------------------------------------------------
+.navbar-container {
+  background-color: #474e5d;
+  color: white;
+  height: 2vh;
+  font-size: 1vw;
+  list-style: none;
+  display: flex;
+    #bull-drawing {
+      position: relative;
+      top: -.5vh;
+      width: 3vw;
+      height: 4vh;
+    }
+    h1 {
+      font-size: 1.5vw;
+      display: inline-block;
+      color: teal;
+      font-family: 'Asset', cursive;
+      font-size: 1.5vw;
+      font-style: italic;
+
+    }
+    ul {
+      position: absolute;
+      right: 1vw;
+      display: flex;
+      justify-content: flex-end;
+      list-style-type: none;
+      margin-right: 2vw;
+          :hover {
+            // background-color: blue;
+            text-decoration:  solid underline 10px;
+            color:lightgreen;
+          }
+          li, div {
+              margin-right: 2vw;
+                a {
+                  color: white;
+                }
+            }
+    }
+}
+
+
+
 
 
 //-------------------------------------------ABOUT PAGE---------------------------------------------------------------------

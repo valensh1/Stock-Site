@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import StyledNavBar from '../components/StyledNavBar';
 
 const About = () => {
 	return (
 		<div>
+			<StyledNavBar />
 			<div className="about-section">
 				<h1>About Us Page</h1>
 				<p>Some text about who we are and what we do.</p>
