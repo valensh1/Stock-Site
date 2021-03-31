@@ -12,12 +12,8 @@ const StockSpecificData = props => {
 						className="stock-specific-data"
 						id="stock-specific-company-heading"
 					>
-						<h1>
-							<span>{stockSpecificAPIData[0].companyName}</span>
-						</h1>
-						<h2>
-							<span id="stock-specific-heading-ticker">{ticker}</span>
-						</h2>
+						<h1>{stockSpecificAPIData[0].companyName}</h1>
+						<h2 id="stock-specific-heading-ticker">{ticker}</h2>
 						<div id="stock-specific-heading-price">
 							<h3>${stockSpecificAPIData[1].price}</h3>
 							<h4
@@ -49,31 +45,52 @@ const StockSpecificData = props => {
 								className="stock-specific-data"
 								id="stock-specific-company-data"
 							>
-								<h2 id="company-data-header">Company Data</h2>
-								<h4>Sector:{stockSpecificAPIData[0].sector}</h4>
-								<h4>Market Cap: {stockSpecificAPIData[1].marketCap}</h4>
+								<h1 id="company-data-header" className="bg-dark text-info">
+									Company Data
+								</h1>
+								<h4>
+									Sector: <span>{stockSpecificAPIData[0].sector}</span>
+								</h4>
+								<h4>
+									Market Cap: <span>{stockSpecificAPIData[1].marketCap}</span>
+								</h4>
 							</div>
 							<div
 								className="stock-specific-data"
 								id="stock-specific-price-info"
 							>
-								<h2 id="price-header">Price Data</h2>
+								<h1 id="price-header" className="bg-dark text-info">
+									Price Data
+								</h1>
 								<h4>
-									Last Price: <span>${stockSpecificAPIData[1].price}</span>
+									Last Price:{' '}
+									<span id="last-price" className="more-spacing">
+										${stockSpecificAPIData[1].price}
+									</span>
 								</h4>
 								<h4>
-									Price Change: <span>${stockSpecificAPIData[1].change}</span>
+									Price Change:{' '}
+									<span id="price-change" className="more-spacing">
+										${stockSpecificAPIData[1].change}
+									</span>
 								</h4>
 								<h4>
 									% Change:{' '}
-									<span>{stockSpecificAPIData[1].changesPercentage}%</span>
+									<span id="percent-change" className="more-spacing">
+										{stockSpecificAPIData[1].changesPercentage}%
+									</span>
 								</h4>
 								<h4>
 									Day High Price:{' '}
-									<span>${stockSpecificAPIData[1].dayHigh}</span>
+									<span className="more-spacing">
+										${stockSpecificAPIData[1].dayHigh}
+									</span>
 								</h4>
 								<h4>
-									Day Low Price: <span>${stockSpecificAPIData[1].dayLow}</span>
+									Day Low Price:{' '}
+									<span className="more-spacing">
+										${stockSpecificAPIData[1].dayLow}
+									</span>
 								</h4>
 								<h4>
 									52 Week Range:
@@ -101,32 +118,47 @@ const StockSpecificData = props => {
 								className="stock-specific-data"
 								id="stock-specific-volume-info"
 							>
-								<h2 id="volume-header">Volume Data</h2>
-								<h4>Volume: {stockSpecificAPIData[1].volume}</h4>
-								<h4>Avg. Volume: {stockSpecificAPIData[1].avgVolume}</h4>
+								<h1 id="volume-header" className="bg-dark text-info">
+									Volume Data
+								</h1>
+								<h4>
+									Volume: <span>{stockSpecificAPIData[1].volume}</span>
+								</h4>
+								<h4>
+									Avg. Volume: <span>{stockSpecificAPIData[1].avgVolume}</span>
+								</h4>
 							</div>
 							<div
 								className="stock-specific-data"
 								id="stock-specific-ratios-valuation"
 							>
-								<h2 id="valuation-header">Valuation</h2>
+								<h1 id="valuation-header" className="bg-dark text-info">
+									Valuation
+								</h1>
 								<h4>
 									PE Ratio:{' '}
-									{stockSpecificAPIData[1].pe !== null
-										? stockSpecificAPIData[1].pe.toFixed(2) * 1
-										: null}
+									<span>
+										{stockSpecificAPIData[1].pe !== null
+											? stockSpecificAPIData[1].pe.toFixed(2) * 1
+											: null}
+									</span>
 								</h4>
 							</div>
 						</div>
 						<div className="stock-specific-data" id="stock-specific-other-info">
-							<h6 id="company-description">
-								Company Description: {stockSpecificAPIData[0].description}
+							<h6 id="company-description-header" className="bg-dark text-info">
+								Company Description:
 							</h6>
-							<h4>
+							<p id="company-description">
+								{stockSpecificAPIData[0].description}
+							</p>
+							<h4 id="earnings-announcement-container">
 								Next Earnings Announcement Date:{' '}
-								{new Date(
-									stockSpecificAPIData[1].earningsAnnouncement
-								).toLocaleDateString()}
+								<span id="earnings-announcement">
+									{new Date(
+										stockSpecificAPIData[1].earningsAnnouncement
+									).toLocaleDateString()}
+								</span>
 							</h4>
 						</div>
 					</div>

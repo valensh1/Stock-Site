@@ -567,6 +567,7 @@ body, html {
           text-align: center;        
           height: 15vh;
           width: 100vw;
+          
 
           
           #stock-specific-heading-price {
@@ -584,7 +585,7 @@ body, html {
           }
           // Company Name and Ticker Symbol at top of Stock Specific Data Page / Show Page
           span {
-            font-size: 1.2vw;
+            margin-left: 10vw;
           }
           #stock-specific-heading-ticker {
             font-size: 1vw;
@@ -635,12 +636,40 @@ body, html {
           margin-top: 13%;
           padding-top: 0%;
           font-size: .6vw;
-          text-align: right;
+          text-align: left;
           border-bottom: 1px solid lightgray;
         }
-        span {
-          // margin-left: 5%;
+        h1 {
+          font-size: 1vw;
+          text-decoration: none;
         }
+        span {
+          margin-left: 0vw;  ///////////// DELETE THIS TO PUT EVERYTHING BACK TO NORMAL
+          font-weight: 750;
+          font-style: italic;
+        }
+
+        .more-spacing {
+          position: relative;
+          left: 2.3vw;
+        }
+
+        #percent-change {
+          position: relative;
+          left: 4.5vw;
+        }
+
+        #price-change {
+          position: relative;
+          left: 4vw;
+        }
+
+        #last-price {
+          position: relative;
+          left: 4vw;
+        }
+
+       
     }
 
     #data-rightside-chart {
@@ -654,8 +683,13 @@ body, html {
       right: 0%;
         h2, h4 {
           font-size: .6vw;
-          margin-top: 15%;
+          margin-top: 3%;
           border-bottom: 1.8px solid lightgray;
+          span {
+            font-weight: 900;
+            font-size: .6vw;
+            // margin-left: 2vw;
+          }
         }
     }
 
@@ -667,12 +701,18 @@ body, html {
       font-size: .7vw;
       border: 3px solid lightgray;
         }
+        #company-description-header {
+          position: relative;
+          top: -15vh;
+          font-size: 1vw;
+          width: fit-content;
+        }
         #company-description {
           position: relative;
           width: 22vw;
           height: 20vh;
-          top: -10vh; // more negative the higher up it moves on screen
-          font-size: .5vw;
+          top: -15vh; // more negative the higher up it moves on screen
+          font-size: .48vw;
         }
     }
 #line-graph-container {
@@ -693,20 +733,35 @@ body, html {
   }
 
   #company-data-header {
-    text-decoration: underline;
+   width: fit-content;
   }
 
   #price-header {
-    text-decoration: underline;
+    position: relative;
+   left: 0vw;
+   width: fit-content;
   }
 
   #volume-header {
-    text-decoration: underline;
+    width: fit-content;
+    font-size: 1vw;
   }
 
   #valuation-header {
-    text-decoration: underline;
+    width: fit-content;
+    font-size: 1vw;
   }
+
+  #earnings-announcement-container {
+    position: relative;
+    left: 0vw;
+    bottom: 4vh;
+      margin-top: .5vh;
+      #earnings-announcement {
+        font-weight: 750;
+      }
+  }
+
 
 // Stock Specific Articles
 #stock-specific-articles-container {
