@@ -536,7 +536,7 @@ body, html {
 }
   }
 
-  // -----------------------------STOCK SPECIFIC DATA PAGE / SHOW-STOCK NEWS PAGE/ ----------------------------------------
+  // -----------------------------STOCK NEWS PAGE FOR SINGLE STOCK (SHOW PAGE)  / STOCK SPECIFIC DATA PAGE ----------------------------------------
 .stock-news-back-button {
   position: relative;
   top: -2.5vh;
@@ -552,6 +552,9 @@ body, html {
     position: relative;
     height: 100%;
     width: 100%;
+    .navbar-container {
+      height: 15vh;
+    }
     #stock-specific-data-container {
       position: relative;
       height: 60vh;

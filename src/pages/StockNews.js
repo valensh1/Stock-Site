@@ -5,6 +5,7 @@ import HomeIcon from '../components/Icons/HomeIcon';
 import StockSpecificData from '../components/StockSpecificData';
 import StockSpecificNews from '../components/StockSpecificNews';
 import BackButton from '../components/BackButton';
+import StyledNavBar from '../components/StyledNavBar';
 
 export default function StockNews(props) {
 	// console.log(props);
@@ -64,10 +65,7 @@ export default function StockNews(props) {
 
 	return (
 		<div id="stock-news-container">
-			<HomeIcon />
-			<Link to={'/watchlist'}>
-				<BackButton />
-			</Link>
+			<StyledNavBar />
 			{console.log(ticker)}
 			{console.log(stockSpecificAPIData)}
 			{console.log(dailyClosingPrices)}
