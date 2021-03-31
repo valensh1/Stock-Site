@@ -7,11 +7,11 @@ const About = () => {
 		<div>
 			<StyledNavBar />
 			<div className="about-section">
-				<h1>About Us Page</h1>
-				<p>Some text about who we are and what we do.</p>
+				<h1>ABOUT US</h1>
 				<p>
-					Resize the browser window to see that this page is responsive by the
-					way.
+					Our talented pool of financial professionals are one of a kind in
+					creating and providing our customers with cutting edge products and
+					services.{' '}
 				</p>
 			</div>
 			<h2 style={{ textAlign: 'center' }}>Our Team</h2>
@@ -24,10 +24,10 @@ const About = () => {
 							alt="Jane"
 						/>
 						<div className="container">
-							<h2>Jane Doe</h2>
+							<h2>Guy Adami</h2>
 							<p className="title">CEO & Founder</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>jane@example.com</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>guyadami@yahoo.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -42,10 +42,10 @@ const About = () => {
 							alt="Mike"
 						/>
 						<div className="container">
-							<h2>Mike Ross</h2>
-							<p className="title">Chief Operating Officer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>mike@example.com</p>
+							<h2>Pete Najarian</h2>
+							<p className="title">Chief Operating Officer (COO)</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>petenajarian@yahoo.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -60,10 +60,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Melissa Lee</h2>
+							<p className="title">Chief Financial Officer (CFO)</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>melissalee@yahoo.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -78,10 +78,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Jim Cramer</h2>
+							<p className="title">VP Sales</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>jimcramer@cnbc.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -96,10 +96,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Tim Seymour</h2>
+							<p className="title">Chief Technology Officer</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>timseymour@yahoo.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -114,10 +114,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Karen Finerman</h2>
+							<p className="title">SVP Marketing</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>kfinerman@yahoo.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -132,10 +132,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Jon Najarian</h2>
+							<p className="title">VP Sales - West Region</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>jnajarian@yahoo.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -150,10 +150,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Brian Kelly</h2>
+							<p className="title">Chief Accounting Officer (CAO)</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>bkelly@yahoo.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -168,10 +168,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Steve Grasso</h2>
+							<p className="title">VP Sales - East Region</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>stevegrasso@yahoo.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -186,10 +186,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Diedre Bosa</h2>
+							<p className="title">VP Marketing</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>dbosa@yahoo.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -204,10 +204,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>David Faber</h2>
+							<p className="title">Senior Technology Manager</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>davidfaber@yahoo.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -218,14 +218,14 @@ const About = () => {
 					<div className="card">
 						<img
 							className="about-pics"
-							src="data:image/jpeg;base64,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"
+							src="data:image/jpeg;base64,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"
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Josh Brown</h2>
+							<p className="title">VP Sales</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>joshbrown@yahoo.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -240,10 +240,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Reed Hastings</h2>
+							<p className="title">Chairman/Advisor</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>reedhastings@netflix.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -258,10 +258,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Jeff Bezos</h2>
+							<p className="title">Senior Software Developer</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>jeffbezos@yamazon.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -276,10 +276,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Elon Musk</h2>
+							<p className="title">Janitor</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>elonmusk@tesla.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -294,10 +294,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Tim Cook</h2>
+							<p className="title">Senior Accounting Manager</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>timcook@icloud.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -312,10 +312,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Marc Benioff</h2>
+							<p className="title">Technology Manager</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>mbenioff@salesforce.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>
@@ -330,10 +330,10 @@ const About = () => {
 							alt="John"
 						/>
 						<div className="container">
-							<h2>John Doe</h2>
-							<p className="title">Designer</p>
-							<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-							<p>john@example.com</p>
+							<h2>Mark Zuckerberg</h2>
+							<p className="title">Receptionist</p>
+							{/* <p>Some text that describes me lorem ipsum ipsum lorem.</p> */}
+							<p>zuckerberg@facebook.com</p>
 							<p>
 								<button className="button">Contact</button>
 							</p>

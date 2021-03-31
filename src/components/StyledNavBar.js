@@ -17,10 +17,31 @@ const StyledNavBar = () => {
 						<a>About</a>
 					</Link>
 				</li>
-				<li>
-					<a>Services</a>
-				</li>
-				<li>
+				<div className="dropdown">
+					<li>
+						<a>Services</a>
+					</li>
+					<div className="dropdown-content">
+						<li>
+							<a>Charts</a>
+						</li>
+						<Link to={'/watchlist'}>
+							<li>
+								<a>Watchlists</a>
+							</li>
+						</Link>
+						<li>
+							<a>Stock News</a>
+						</li>
+						<li>
+							<a>Financial Advisory</a>
+						</li>
+						<li>
+							<a>Educational Tutorials</a>
+						</li>
+					</div>
+				</div>
+				<li id="contact">
 					<a>Contact Us</a>
 				</li>
 			</ul>
