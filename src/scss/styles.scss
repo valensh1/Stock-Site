@@ -331,12 +331,36 @@ body, html {
 // -------------------------------------WATCHLIST PAGE STYLING----------------------------------------------------------
 #watchlist-wrapper{
   position: relative;
+ 
+  .navbar-container {
+    position: relative;
+    height: 15vh;
+  }
+  .page-header-watchlist {
+    position: relative;
+    width: fit-content;
+   
+    top: -10vh;
+    left: 38vw;
+    color: white;
+    h1 {
+      font-size: 2.5vw;
+      text-align: center;
+    
+    }
+    p {
+      font-size: .7vw;
+    }
+  }
+ 
 }
 
-#stock-search-bar {
-  position: relative;
-  top: 2vh;
+#stock-market-scrollbar {
+  position: absolute;
+  top: 15vh;
+  width: 100vw;
 }
+
 #bull-logo {
   position: absolute;
   height: 4vh;
@@ -347,7 +371,7 @@ body, html {
 
 .amazon-add {
   position: relative;
-  top: 20vh;
+  top: 15vh;
   width: 20vw;
   height: -20vh;
   right: 20vw;
@@ -361,7 +385,7 @@ body, html {
 
 #general-indices-chart {
   position: absolute;
-  top: 10vh;
+  top: 30vh;
   width: 25vw;
   left: 8vw;
 #st_6e331a4ef8a644eb807e5a76e42ef670 {
@@ -371,16 +395,15 @@ body, html {
 }
 }
 
-// Date Picker on Watchlist Page
-#date {
- position: relative;
- left: 15%;
- width: 18.5vw;
- height: 3.5vh;
- font-size: 1.3vw;
+// Input of ticker for watchlist
+
+#stock-search-bar {
+  position: relative;
+  top: 5vh;
+  margin-top: 2vh;
+  font-size: .7vw;
 }
 
-// Input of ticker for watchlist
     #symbol-input{
       position: relative;
       left: 15%;
@@ -412,7 +435,7 @@ body, html {
 // Overall watchlist container which INCLUDES the search bar and watchlist
 .watchlist-overallContainer {
         position: relative;
-        top: -20vh;  // ADJUST HERE TO MOVE WATCHLIST UP OR DOWN----> NEGATIVE NUMBER MOVES IT HIGHER UP
+        top: -25vh;  // ADJUST HERE TO MOVE WATCHLIST UP OR DOWN----> NEGATIVE NUMBER MOVES IT HIGHER UP
         width: 30%;
         height: 100%;
         left: 37%;
@@ -423,7 +446,7 @@ body, html {
             position: absolute;
             left: 0%;
             width: 100%;
-            top: 180%;
+            top: 12vh;
   // Watchlist headers
       .watchlist-headers {
             display: flex;
@@ -444,7 +467,7 @@ body, html {
           position: relative;
           left: -30%;
           color: black;
-          font-size: .7vw;
+          font-size: .6vw;
         }
       }
     }
@@ -500,10 +523,14 @@ body, html {
       font-weight: 900;
       margin-right: 1.5vw;
       margin-left: 1.5vw;
+      font-size: .7vw;
     }
 
     #trash-can {
       cursor: pointer;
+     font-size: 1vw;
+      
+    
     }
   }
 }

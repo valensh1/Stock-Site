@@ -7,7 +7,7 @@ import { DeleteSymbol } from '../components/DeleteSymbol'; // This is to import 
 import MarketIndicesChart from '../components/MarketIndicesChart';
 import MarketScrollbar from '../components/MarketScrollbar';
 import Ad1 from '../components/Icons/Ad1';
-import BackButton from '../components/BackButton';
+import StyledNavBar from '../components/StyledNavBar';
 
 const Watchlist = () => {
 	const [DBWatchList, setDBWatchList] = useState([]);
@@ -172,6 +172,9 @@ Immediately Invoked Function Expression needed when use the async function with 
 				// Check to see if data sent back contains data. If an invalid ticker symbol was entered the data will come back from Financial Modeling Prep as an empty array.
 				console.log('Invalid Ticker Symbol Entry By User');
 				setValidTicker(false);
+				setTimeout(() => {
+					setValidTicker(true);
+				}, 3000); // This takes away the Invalid Ticker Symbol message after 3 seconds of entering an invalid symbol so it doesn't just stay there
 				return;
 			} else {
 				setValidTicker(true);
@@ -286,14 +289,17 @@ Need to put this before the setDBWatchList since it has a race condition and als
 
 	return (
 		<div id="watchlist-wrapper">
-			<HomeIcon />
-			<Link to={'/'}>
-				<BackButton />
-			</Link>
+			<StyledNavBar />
+			<div className="page-header-watchlist">
+				<h1>WATCHLIST</h1>
+				<p>
+					Track all your stocks with your own custom watchlist and make sure you
+					never miss a trade!
+				</p>
+			</div>
 			<MarketScrollbar />
 			<MarketIndicesChart />
 			<Ad1 />
-			<img id="bull-logo" src="https://i.imgur.com/MBzbnpg.png" />
 			<div className="watchlist-overallContainer">
 				<div id="stock-search-bar">
 					<AddSymbol
