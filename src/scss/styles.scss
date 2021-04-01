@@ -365,6 +365,7 @@ body, html {
   position: absolute;
   top: 15vh;
   width: 100vw;
+  height: 2vh;
 }
 
 #bull-logo {
@@ -401,13 +402,35 @@ body, html {
 }
 }
 
-// Input of ticker for watchlist
+.top-gainers-container {
+  position: relative;
+  left: 75vw;
+  border: 5px solid teal;
+  height: fit-content;
+  width: fit-content;
+      #top-gainer-header {
+        text-align: center;
+        background: teal;
+        color: white;
+        font-size: .8vw;
+      }
+}
 
+tr, th, td {
+  border: .5px solid lightgrey;
+  font-size: .5vw;
+  text-align: center;
+  width: 5vw;
+  padding-left: 10%;
+
+}
+
+// Input of ticker for watchlist
 #stock-search-bar {
   position: relative;
   top: 5vh;
   margin-top: 2vh;
-  font-size: .7vw;
+  font-size: .4vw;
 }
 
     #symbol-input{
@@ -416,7 +439,7 @@ body, html {
       width: 25%;
         #symbol-search {
          width: 15vw;
-         font-size: .8vw;
+         font-size: .6vw;
         }
   }
 
@@ -441,10 +464,11 @@ body, html {
 // Overall watchlist container which INCLUDES the search bar and watchlist
 .watchlist-overallContainer {
         position: relative;
-        top: -25vh;  // ADJUST HERE TO MOVE WATCHLIST UP OR DOWN----> NEGATIVE NUMBER MOVES IT HIGHER UP
+        top: -82vh;  // ADJUST HERE TO MOVE WATCHLIST UP OR DOWN----> NEGATIVE NUMBER MOVES IT HIGHER UP
         width: 30%;
-        height: 100%;
+        height: fit-content;
         left: 37%;
+        margin-top: 5vh;
   // Watchlist container which EXCLUDES the search bar. It only includes the actual watchlist section with the headers for the watchlist
   .watchlist-xSearchbar-container {
             display: flex;
@@ -512,12 +536,12 @@ body, html {
     }
     .symbol {
       margin-left: 2%;
-      font-size: 1vw;
+      font-size: .8vw;
      
     }
     .last-price {
       left: 55%;
-      font-size: 1vw;
+      font-size: .7vw;
       font-style: oblique;
     }
 
@@ -541,6 +565,8 @@ body, html {
   }
 }
   }
+
+
 
   // -----------------------------STOCK NEWS PAGE FOR SINGLE STOCK (SHOW PAGE)  / STOCK SPECIFIC DATA PAGE ----------------------------------------
 .stock-news-back-button {
@@ -807,6 +833,24 @@ body, html {
 }
 
 
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .watchlist-overallContainer {
+    top: -50vh;  // ADJUST HERE TO MOVE WATCHLIST UP OR DOWN----> NEGATIVE NUMBER MOVES IT HIGHER UP
+    #stock-search-bar {
+      position: relative;
+      top: 8vh;
+      margin-top: 2vh;
+      font-size: .4vw;
+    }
+  }
+}
+ 
+// @media only screen and (max-width: 600px) {
+//   .medium-size {
+//     top: -50vh;  // ADJUST HERE TO MOVE WATCHLIST UP OR DOWN----> NEGATIVE NUMBER MOVES IT HIGHER UP
+//   }
+// }
+ 
 
   
 

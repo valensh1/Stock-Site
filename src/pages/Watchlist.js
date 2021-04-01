@@ -300,9 +300,9 @@ Need to put this before the setDBWatchList since it has a race condition and als
 			</div>
 			<MarketScrollbar />
 			<MarketIndicesChart />
+			<BiggestGainers />
 			<Ad1 />
-			{/* <BiggestGainers /> */}
-			<div className="watchlist-overallContainer">
+			<div className="watchlist-overallContainer medium-size">
 				<div id="stock-search-bar">
 					<AddSymbol
 						tickerSymbol={typedSymbol}

@@ -17,22 +17,25 @@ const BiggestGainers = () => {
 
 	return (
 		<div className="top-gainers-container">
+			<h1 id="top-gainer-header">Today's Top Gainers</h1>
 			<table>
-				<tr>
-					<th>Company</th>
-					<th>Ticker</th>
-					<th>Price</th>
-					<th>$ Change</th>
-					<th>% Change</th>
-				</tr>
+				<thead>
+					<tr>
+						{/* <th>Company</th> */}
+						<th>Ticker</th>
+						<th>Price</th>
+						<th>$ Change</th>
+						<th>% Change</th>
+					</tr>
+				</thead>
 				{topGainers.length
 					? topGainers.map((stock, index) => {
 							return (
 								<tr>
-									<td>{stock.companyName}</td>
+									{/* <td>{stock.companyName}</td> */}
 									<td>{stock.ticker}</td>
-									<td>{(stock.price * 1).toFixed(2) * 1}</td>
-									<td>{(stock.changes * 1).toFixed(2) * 1}</td>
+									<td>${(stock.price * 1).toFixed(2) * 1}</td>
+									<td>${(stock.changes * 1).toFixed(2) * 1}</td>
 									<td>{stock.changesPercentage}</td>
 								</tr>
 							);
