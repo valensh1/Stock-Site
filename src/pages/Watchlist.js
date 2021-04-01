@@ -8,6 +8,7 @@ import MarketIndicesChart from '../components/MarketIndicesChart';
 import MarketScrollbar from '../components/MarketScrollbar';
 import Ad1 from '../components/Icons/Ad1';
 import StyledNavBar from '../components/StyledNavBar';
+import BiggestGainers from '../components/BiggestGainers';
 
 const Watchlist = () => {
 	const [DBWatchList, setDBWatchList] = useState([]);
@@ -300,6 +301,7 @@ Need to put this before the setDBWatchList since it has a race condition and als
 			<MarketScrollbar />
 			<MarketIndicesChart />
 			<Ad1 />
+			{/* <BiggestGainers /> */}
 			<div className="watchlist-overallContainer">
 				<div id="stock-search-bar">
 					<AddSymbol

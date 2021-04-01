@@ -65,13 +65,13 @@ const StockSpecificData = props => {
 								<h4>
 									Last Price:{' '}
 									<span id="last-price" className="more-spacing">
-										${stockSpecificAPIData[1].price}
+										${stockSpecificAPIData[1].price.toFixed(2) * 1}
 									</span>
 								</h4>
 								<h4>
 									Price Change:{' '}
 									<span id="price-change" className="more-spacing">
-										${stockSpecificAPIData[1].change}
+										${stockSpecificAPIData[1].change.toFixed(2) * 1}
 									</span>
 								</h4>
 								<h4>
@@ -83,19 +83,20 @@ const StockSpecificData = props => {
 								<h4>
 									Day High Price:{' '}
 									<span className="more-spacing">
-										${stockSpecificAPIData[1].dayHigh}
+										${stockSpecificAPIData[1].dayHigh.toFixed(2) * 1}
 									</span>
 								</h4>
 								<h4>
 									Day Low Price:{' '}
 									<span className="more-spacing">
-										${stockSpecificAPIData[1].dayLow}
+										${stockSpecificAPIData[1].dayLow.toFixed(2) * 1}
 									</span>
 								</h4>
 								<h4>
 									52 Week Range:
 									<span>
-										{`$${stockSpecificAPIData[1].yearHigh}-$${stockSpecificAPIData[1].yearLow}`}
+										{`$${stockSpecificAPIData[1].yearHigh.toFixed(2) *
+											1}-$${stockSpecificAPIData[1].yearLow.toFixed(2) * 1}`}
 									</span>
 								</h4>
 								<h4>
@@ -147,7 +148,7 @@ const StockSpecificData = props => {
 						</div>
 						<div className="stock-specific-data" id="stock-specific-other-info">
 							<h6 id="company-description-header" className="bg-dark text-info">
-								Company Description:
+								Company Description
 							</h6>
 							<p id="company-description">
 								{stockSpecificAPIData[0].description}

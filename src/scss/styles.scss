@@ -275,7 +275,13 @@ body, html {
 .card {
   box-shadow: 0px 10px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
+  :hover {
+   transform: scale(1.145);
+   cursor: pointer;
+  }
 }
+
+
 
 .about-section {
   padding: 50px;
@@ -651,24 +657,23 @@ body, html {
 
         .more-spacing {
           position: relative;
-          left: 2.3vw;
-        }
-
-        #percent-change {
-          position: relative;
-          left: 4.5vw;
-        }
-
-        #price-change {
-          position: relative;
-          left: 4vw;
+          left: 3vw;
         }
 
         #last-price {
           position: relative;
-          left: 4vw;
+          left: 4.6vw;
         }
 
+        #percent-change {
+          position: relative;
+          left: 5vw;
+        }
+
+        #price-change {
+          position: relative;
+          left: 4.2vw;
+        }
        
     }
 
