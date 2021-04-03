@@ -35,8 +35,12 @@ const BiggestGainers = () => {
 									{/* <td>{stock.companyName}</td> */}
 									<td>{stock.ticker}</td>
 									<td>${(stock.price * 1).toFixed(2) * 1}</td>
-									<td>${(stock.changes * 1).toFixed(2) * 1}</td>
-									<td>{stock.changesPercentage}</td>
+									<td className={stock.changes > 0 ? 'green' : 'red'}>
+										${(stock.changes * 1).toFixed(2) * 1}
+									</td>
+									<td className={stock.changes > 0 ? 'green' : 'red'}>
+										{stock.changesPercentage}
+									</td>
 								</tr>
 							);
 					  })
