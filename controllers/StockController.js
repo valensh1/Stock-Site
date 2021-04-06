@@ -56,7 +56,6 @@ stockRouter.get('/:id', async (req, res) => {
 	}
 });
 
-
 // DELETE/DESTROY ROUTE
 stockRouter.delete('/:id', async (req, res) => {
 	try {
