@@ -17,7 +17,6 @@ The idea of this project is to design a full-fledged one stop shop for everythin
 * MongoDB
 * Express
 * Node.js
-* MERN stack
 * Bootstrap
 * SASS
 * Chart.js

@@ -22,6 +22,7 @@ app.use(express.json());
 if (process.env.NODE_ENV !== 'development'){
   app.use(express.static('public'))
 }
+
 // app.use(cors()); // Must have this on server.js file // ONLY NEED THIS IF HAVE FRONT-END AND BACK-END SEPARATELY AND THEY ARE DIFFERENT LANGUAGES LIKE JAVASCRIPT AND RUBY ON RAILS
 
 

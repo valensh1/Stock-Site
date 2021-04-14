@@ -3,7 +3,7 @@ const Watchlist = require('../models/Watchlist');
 const express = require('express');
 const stockRouter = express.Router();
 
-const Financial_Modeling_API = process.env.FINANCIAL_API_KEY; // ------------------------MIGHT NEED TO DELETE THIS
+const Financial_Modeling_API = process.env.FINANCIAL_API_KEY;
 
 // CREATE
 stockRouter.post('/', async (req, res) => {

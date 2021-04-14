@@ -5,6 +5,7 @@ import Products from '../pages/Products';
 import Contact from '../pages/Contact';
 import StockNews from '../pages/StockNews';
 import WatchList from '../pages/Watchlist';
+import Financials from '../pages/Financials';
 
 const routes = [
 	// Creation of array of objects used to send to index.js file in the router folder for React Router to send user to correct route based upon user request. Nav Bar Component also uses these routes
