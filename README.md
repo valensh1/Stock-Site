@@ -1,7 +1,7 @@
 # ALL THINGS WALL STREET
 
 # WEBSITE LINK -
-https://stock-watchlist-final.herokuapp.com/
+[https://stock-watchlist-final.herokuapp.com/]
 
 
 ## About
